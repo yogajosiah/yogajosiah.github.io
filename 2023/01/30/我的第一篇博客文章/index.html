@@ -7,15 +7,19 @@
   
   <title>我的第一篇博客文章 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="图像识别小车(电赛速成篇)[TOC] 一、硬件准备：1.1 概述 使用STM32F103作为控制板，连接电机驱动模块以控制小车的移动 连接摄像头模块到Jetson Nano，用于获取实时图像。 将STM32F103和Jetson Nano连接起来，可以通过串口通信或其他适当的通信方式进行数据传输。  1.2 方案设计 驱动模块： L298N+直流减速编码电机（霍尔款）。 方向控制： MG995伺服">
+<meta property="og:type" content="article">
 <meta property="og:title" content="我的第一篇博客文章">
 <meta property="og:url" content="http://example.com/2023/01/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="图像识别小车(电赛速成篇)[TOC] 一、硬件准备：1.1 概述 使用STM32F103作为控制板，连接电机驱动模块以控制小车的移动 连接摄像头模块到Jetson Nano，用于获取实时图像。 将STM32F103和Jetson Nano连接起来，可以通过串口通信或其他适当的通信方式进行数据传输。  1.2 方案设计 驱动模块： L298N+直流减速编码电机（霍尔款）。 方向控制： MG995伺服">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710132852.png">
 <meta property="article:published_time" content="2023-01-30T11:06:03.000Z">
-<meta property="article:modified_time" content="2023-01-30T11:06:03.681Z">
+<meta property="article:modified_time" content="2023-07-10T06:43:38.356Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710132852.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -86,7 +90,65 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="图像识别小车-电赛速成篇"><a href="#图像识别小车-电赛速成篇" class="headerlink" title="图像识别小车(电赛速成篇)"></a>图像识别小车(电赛速成篇)</h1><p>[TOC]</p>
+<h2 id="一、硬件准备："><a href="#一、硬件准备：" class="headerlink" title="一、硬件准备："></a>一、硬件准备：</h2><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h3><ul>
+<li>使用STM32F103作为控制板，连接电机驱动模块以控制小车的移动</li>
+<li>连接摄像头模块到Jetson Nano，用于获取实时图像。</li>
+<li>将STM32F103和Jetson Nano连接起来，可以通过串口通信或其他适当的通信方式进行数据传输。</li>
+</ul>
+<h3 id="1-2-方案设计"><a href="#1-2-方案设计" class="headerlink" title="1.2 方案设计"></a>1.2 方案设计</h3><ul>
+<li><strong>驱动模块：</strong> L298N+直流减速编码电机（霍尔款）。</li>
+<li><strong>方向控制：</strong> MG995伺服电机。</li>
+<li><strong>Jetson Nano连接摄像头：</strong> 77°IMX219传感器的摄像头。</li>
+<li><strong>stm32f103c8t6与nano之间的通信：</strong> 不会。</li>
+</ul>
+<h3 id="1-3-方案实现"><a href="#1-3-方案实现" class="headerlink" title="1.3 方案实现"></a>1.3 方案实现</h3><h4 id="1-3-1-直流减速编码电机（霍尔款）"><a href="#1-3-1-直流减速编码电机（霍尔款）" class="headerlink" title="1.3.1 直流减速编码电机（霍尔款）"></a>1.3.1 直流减速编码电机（霍尔款）</h4><ol>
+<li>介绍:</li>
+</ol>
+<ul>
+<li>将直流电能转化为机械能的电机，并通过减速装置和编码器实现精确的位置和速度控制。</li>
+<li>属于有刷电机，通过电刷和电机换向器使电机的转子持续旋转。<img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710132852.png"></li>
+</ul>
+<ol start="2">
+<li>组成：</li>
+</ol>
+<ul>
+<li>直流电机：直流电源供电；（正确连接驱动线即可）</li>
+<li>减速装置：降低转速，增加转矩；</li>
+<li>编码器：测量电机旋转位置和速度的装置；（需要控制器</li>
+</ul>
+<ol start="3">
+<li>规格：</li>
+</ol>
+<ul>
+<li>电压：12V，功率3-4W</li>
+</ul>
+<ol start="4">
+<li>接线规则：</li>
+</ol>
+<h4 id="1-3-2-L298N电机驱动模块"><a href="#1-3-2-L298N电机驱动模块" class="headerlink" title="1.3.2 L298N电机驱动模块"></a>1.3.2 L298N电机驱动模块</h4><h4 id="1-3-3-MG995伺服电机"><a href="#1-3-3-MG995伺服电机" class="headerlink" title="1.3.3 MG995伺服电机"></a>1.3.3 MG995伺服电机</h4><h2 id="二、图像采集与处理："><a href="#二、图像采集与处理：" class="headerlink" title="二、图像采集与处理："></a>二、图像采集与处理：</h2><h3 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h3><ul>
+<li>在Jetson Nano上，使用适当的库（如OpenCV）初始化摄像头模块，并获取实时图像。</li>
+<li>对图像进行预处理，如去噪、颜色空间转换、边缘检测等，以突出红线并提取特征。</li>
+<li>运行图像处理算法（如色彩分割、轮廓检测、直线拟合等）来识别红线的位置和方向。</li>
+</ul>
+<h3 id="2-2-方案设计"><a href="#2-2-方案设计" class="headerlink" title="2.2 方案设计"></a>2.2 方案设计</h3><h3 id="2-3-方案实现"><a href="#2-3-方案实现" class="headerlink" title="2.3 方案实现"></a>2.3 方案实现</h3><h2 id="三、红线跟踪与控制："><a href="#三、红线跟踪与控制：" class="headerlink" title="三、红线跟踪与控制："></a>三、红线跟踪与控制：</h2><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h3><ul>
+<li>将处理后的图像数据传输到STM32F103上进行处理。</li>
+<li>根据红线的位置和方向信息，控制电机驱动模块，使小车沿着红线行驶。</li>
+<li>使用PID控制算法来实现平稳的跟踪和控制。</li>
+</ul>
+<h3 id="3-2-方案设计"><a href="#3-2-方案设计" class="headerlink" title="3.2 方案设计"></a>3.2 方案设计</h3><ul>
+<li>控制算法</li>
+<li>PID算法</li>
+</ul>
+<h3 id="3-3-方案实现"><a href="#3-3-方案实现" class="headerlink" title="3.3 方案实现"></a>3.3 方案实现</h3><h2 id="四、实时性与优化："><a href="#四、实时性与优化：" class="headerlink" title="四、实时性与优化："></a>四、实时性与优化：</h2><h3 id="4-1-概述"><a href="#4-1-概述" class="headerlink" title="4.1 概述"></a>4.1 概述</h3><ul>
+<li>考虑使用优化技术和算法，以提高红线识别和控制的实时性。</li>
+<li>对图像处理和电机控制的算法进行性能优化，以确保在给定的计算资源下实现实时响应和较低的延迟。</li>
+</ul>
+<h3 id="4-2-方案设计"><a href="#4-2-方案设计" class="headerlink" title="4.2 方案设计"></a>4.2 方案设计</h3><h3 id="4-3-方案实现"><a href="#4-3-方案实现" class="headerlink" title="4.3 方案实现"></a>4.3 方案实现</h3><h2 id="五、调试与测试："><a href="#五、调试与测试：" class="headerlink" title="五、调试与测试："></a>五、调试与测试：</h2><h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h3><ul>
+<li>在实现过程中，进行逐步调试和测试，确保硬件和软件的正常运行。</li>
+<li>可以使用调试工具和日志打印来检查数据传输、图像处理和电机控制的正确性。</li>
+</ul>
+<h3 id="5-2-方案设计"><a href="#5-2-方案设计" class="headerlink" title="5.2 方案设计"></a>5.2 方案设计</h3><h3 id="5-3-方案实现"><a href="#5-3-方案实现" class="headerlink" title="5.3 方案实现"></a>5.3 方案实现</h3>
       
     </div>
     <footer class="article-footer">
@@ -98,6 +160,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2023/07/10/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          博客图床
+        
+      </div>
+    </a>
   
   
     <a href="/2023/01/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -126,7 +197,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li></ul>
     </div>
   </div>
 
@@ -137,6 +208,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/07/10/%E5%8D%9A%E5%AE%A2%E5%9B%BE%E5%BA%8A/">博客图床</a>
+          </li>
         
           <li>
             <a href="/2023/01/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
