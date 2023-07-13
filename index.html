@@ -87,57 +87,46 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>[TOC]</p>
-<h2 id="1-计算机视觉"><a href="#1-计算机视觉" class="headerlink" title="1. 计算机视觉"></a>1. 计算机视觉</h2><ul>
-<li><strong>图片的特征向量维度=</strong> 像素*通道数；</li>
-<li><strong>卷积用来处理较大数据的图像。</strong> </li>
-<li><strong>计算机视觉：</strong> 使用了多种技术和算法，包括图像处理、特征提取、模式识别、机器学习和深度学习等。随着硬件和算法的进步，计算机视觉在许多领域中取得了显著的进展，并且在自动驾驶、医学诊断、安防监控、工业质检等应用中发挥着重要的作用。</li>
-<li><strong>相关概念：</strong> <blockquote>
+<h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><p><strong>1. 图片的特征向量维度=</strong> 像素*通道数；<br><strong>2. 卷积用来处理较大数据的图像。</strong><br><strong>3. 计算机视觉：</strong> 使用了多种技术和算法，包括图像处理、特征提取、模式识别、机器学习和深度学习等。随着硬件和算法的进步，计算机视觉在许多领域中取得了显著的进展，并且在自动驾驶、医学诊断、安防监控、工业质检等应用中发挥着重要的作用。<br><strong>4. 相关概念：</strong> </p>
 <ul>
 <li>神经网络：是一种计算模型，它由大量相互连接的简单处理单元（称为神经元）组成，这些神经元模仿人类大脑的工作方式。</li>
 <li>深度学习：基于神经网络的机器学习方法，通过构建和训练多层神经网络来实现学习任务。</li>
 <li>YOLO（You Only Look Once）是一种基于神经网络的目标检测算法，属于深度学习的一个目标检测模型。YOLO算法使用卷积神经网络（Convolutional Neural Network，CNN）来实现实时目标检测。 </li>
 </ul>
-</blockquote>
-</li>
-</ul>
 <hr>
-<h2 id="2-卷积运算实现垂直边缘检测"><a href="#2-卷积运算实现垂直边缘检测" class="headerlink" title="2. 卷积运算实现垂直边缘检测"></a>2. 卷积运算实现垂直边缘检测</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">以边缘检测为案例，了解卷积是如何进行运算的。</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>垂直边缘检测：</strong></li>
-</ul>
+<h2 id="卷积运算实现垂直边缘检测"><a href="#卷积运算实现垂直边缘检测" class="headerlink" title="卷积运算实现垂直边缘检测"></a>卷积运算实现垂直边缘检测</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">以边缘检测为案例，了解卷积是如何进行运算的。</span><br></pre></td></tr></table></figure>
+<p><strong>1. 垂直边缘检测：</strong></p>
 <p>$$图片1(6\times6)*过滤器(3\times3)=图片2(4<br>\times4)$$<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712100048.png"></p>
+<p><strong>2. 不同编程语言对卷积计算的实现函数：</strong> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python:conv_forward</span><br><span class="line">tensenflow:tf.nn.conv2d</span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>不同编程语言对卷积计算的实现函数：</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python:conv_forward</span><br><span class="line">tensenflow:tf.nn.conv2d</span><br></pre></td></tr></table></figure></li>
 <li><strong>实现原理：</strong><br>垂直边缘：两侧的灰度大小有明显区别，一边亮一边暗，则被视为垂直边缘。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712100857.png"></li>
 </ul>
 <hr>
-<h2 id="3-更多边缘检测内容"><a href="#3-更多边缘检测内容" class="headerlink" title="3. 更多边缘检测内容"></a>3. 更多边缘检测内容</h2><ul>
-<li><p><strong>区分正边还是负边:</strong><br>正边：由亮转暗（中间值是30）<br>负边：由暗转亮（中间值是-30）<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712103423.png"></p>
-</li>
-<li><p><strong>水平边缘检测</strong><br>水平边缘检测过滤器：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712104159.png"></p>
-</li>
-<li><p><strong>其他过滤器</strong> </p>
+<h2 id="更多边缘检测内容"><a href="#更多边缘检测内容" class="headerlink" title="更多边缘检测内容"></a>更多边缘检测内容</h2><p><strong>1. 区分正边还是负边:</strong><br>正边：由亮转暗（中间值是30）<br>负边：由暗转亮（中间值是-30）<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712103423.png"></p>
+<p><strong>2. 水平边缘检测</strong><br>水平边缘检测过滤器：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712104159.png"></p>
+<p><strong>3. 其他过滤器</strong> </p>
 <table>
-  <tr>
-      <th colspan="3">Soble filter</th>
-  </tr>
-  <tr>
-      <th>1</th>
-      <th>0</th>
-      <th>-1</th>
-  </tr>
-  <tr>
-      <th>2</th>
-      <th>0</th>
-      <th>-2</th>
-  </tr>
-  <tr>
-      <th>1</th>
-      <th>0</th>
-      <th>-1</th>
-  <tr>
-</table></li>
-</ul>
+    <tr>
+        <th colspan="3">Soble filter</th>
+    </tr>
+    <tr>
+        <th>1</th>
+        <th>0</th>
+        <th>-1</th>
+    </tr>
+    <tr>
+        <th>2</th>
+        <th>0</th>
+        <th>-2</th>
+    </tr>
+    <tr>
+        <th>1</th>
+        <th>0</th>
+        <th>-1</th>
+    <tr>
+</table>
+
 <table>
     <tr>
         <th colspan="3">Scharr filter</th>
@@ -161,11 +150,8 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">把过滤器中的九个数字都当作参数，使得到的数据会更有效。通过反向传播可以求得这九个数字的值。</span><br></pre></td></tr></table></figure>
 ***
 
-<h2 id="4-Padding"><a href="#4-Padding" class="headerlink" title="4. Padding"></a>4. Padding</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">为了构建一个复杂的神经网络，一个基本的卷积操作就是Padding。</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>卷积计算遇到的问题：</strong><br>  输出缩小；<br>  图像边缘信息丢失。</li>
-<li><strong>解决方案：</strong> 在卷积之前将图像填充像素（padding），使得输出图像的大小等于输入。<br>$$<br>p=padding=1<br>$$<br>$$<br>(n+2p-f+1)\times(n+2p-f+1)<br>$$</li>
-</ul>
+<h2 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">为了构建一个复杂的神经网络，一个基本的卷积操作就是Padding。</span><br></pre></td></tr></table></figure>
+<p><strong>1. 卷积计算遇到的问题：</strong><br>    输出缩小；<br>    图像边缘信息丢失。<br><strong>2. 解决方案：</strong> 在卷积之前将图像填充像素（padding），使得输出图像的大小等于输入。<br>$$<br>p=padding=1<br>$$<br>$$<br>(n+2p-f+1)\times(n+2p-f+1)<br>$$</p>
 <table>
 <thead>
 <tr>
@@ -184,22 +170,14 @@
 </tbody></table>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f的值通常都是奇数。</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="5-卷积步长"><a href="#5-卷积步长" class="headerlink" title="5. 卷积步长"></a>5. 卷积步长</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">卷积的步长也是构建神经网络的一个基本操作。</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>计算方法：</strong> </li>
-</ul>
+<h2 id="卷积步长"><a href="#卷积步长" class="headerlink" title="卷积步长"></a>卷积步长</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">卷积的步长也是构建神经网络的一个基本操作。</span><br></pre></td></tr></table></figure>
+<p><strong>1. 计算方法：</strong> </p>
 <p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712115308.png"></p>
 <p>$$<br>[\frac{n+2p-f}{s}+1]\times[\frac{n+2p-f}{s}+1]<br>$$<br>如果除不尽，则向下取整；之前讨论的所有情况（垂直边缘检测和水平边缘检测）均在S=1的前提下进行计算的。</p>
-<ul>
-<li><strong>镜像操作：</strong><br><img src="image.png" alt="Alt text"><br>按照机器学习的惯例，不进行反转操作。这种操作也叫做互相关。</li>
-</ul>
-<h2 id="6-三维卷积"><a href="#6-三维卷积" class="headerlink" title="6. 三维卷积"></a>6. 三维卷积</h2><ul>
-<li><strong>立方体中做卷积：</strong> </li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712153814.png"></p>
-<ul>
-<li><strong>多重过滤器：</strong><br>$$<br>(n\times n\times nc) *(f\times f\times nc)=(n-f+1)\times(n-f+1)\times nc’<br>$$</li>
-</ul>
+<p><strong>2. 镜像操作：</strong></p>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/image.png"><br>按照机器学习的惯例，不进行反转操作。这种操作也叫做互相关。</p>
+<h2 id="三维卷积"><a href="#三维卷积" class="headerlink" title="三维卷积"></a>三维卷积</h2><p><strong>1. 立方体中做卷积：</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712153814.png"></p>
+<p><strong>2. 多重过滤器：</strong><br>$$<br>(n\times n\times nc) *(f\times f\times nc)=(n-f+1)\times(n-f+1)\times nc’<br>$$</p>
 <p>nc是图像的通道数，nc’是过滤器的数量。</p>
 <h2 id="7-单层卷积网络"><a href="#7-单层卷积网络" class="headerlink" title="7. 单层卷积网络"></a>7. 单层卷积网络</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标准神经网络的层次：输入层，卷积层，池化层，全连接层，输出层</span><br></pre></td></tr></table></figure>
 
@@ -223,15 +201,19 @@
 <ul>
 <li><strong>最大池化层：</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712205605.png"></li>
 </ul>
-<p>最大池化的输出计算方式与卷积层相同。</p>
+<p>最大池化的输出计算方式与卷积层相同。<br>目的：提取最大的特征值，并且缩小为度。</p>
 <ul>
 <li><strong>平均池化层：</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712205726.png"></li>
 </ul>
 <p>常用的过滤器超级参数：f=2，s=2，p=0；将输入图像缩减一半。</p>
 <h2 id="9-全连接层"><a href="#9-全连接层" class="headerlink" title="9. 全连接层"></a>9. 全连接层</h2><p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712212438.png"></p>
-<p><img src="image-1.png" alt="Alt text"></p>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/image-1.png"></p>
 <hr>
 <p>学习参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1F4411y7o7?p=11&spm_id_from=pageDriver&vd_source=ae1ca2840db393ed378fd438994df72e">bilibili吴恩达深度学习</a></p>
+<p>几个经典的神经网络架构</p>
+<h2 id="LeNet-5"><a href="#LeNet-5" class="headerlink" title="LeNet-5"></a>LeNet-5</h2><p>针对灰度训练</p>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230712225136.png"></p>
+<p>6W个参数</p>
 
       
     </div>
@@ -268,8 +250,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="YOLOV1学习"><a href="#YOLOV1学习" class="headerlink" title="YOLOV1学习"></a>YOLOV1学习</h1><p>[TOC]</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">graph LR</span><br><span class="line">A[深度学习经典检测方法] --&gt; C(两阶段)</span><br><span class="line">C--&gt;E(Faster-rcnn系列)</span><br><span class="line">C--&gt;F(Msak-rcnn系列)</span><br><span class="line">A[深度学习经典检测方法] --&gt; B(单阶段) --&gt;D(YOLO)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>[TOC]</p>
+<h1 id="YOLOV1学习"><a href="#YOLOV1学习" class="headerlink" title="YOLOV1学习"></a>YOLOV1学习</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">graph LR</span><br><span class="line">A[深度学习经典检测方法] --&gt; C(两阶段)</span><br><span class="line">C--&gt;E(Faster-rcnn系列)</span><br><span class="line">C--&gt;F(Msak-rcnn系列)</span><br><span class="line">A[深度学习经典检测方法] --&gt; B(单阶段) --&gt;D(YOLO)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>单阶段：</strong> 直接用CNN（卷积神经网络）求特征回归，确定x,y,w,h进而确定要识别物体的位置和范围</p>
 </blockquote>
@@ -339,20 +321,26 @@
 <p><strong>3.边界框预测：</strong> 每个网格通过预测边界框的坐标和相关性来定位目标。每个边界框包含一组位置和大小参数（x,y,w,h）。通过对这些参数进行回归预测，可以得到边界框的位置。</p>
 <p><strong>4.目标类别预测：</strong> 除了边界框预测，每个网格还负责预测目标所属的类别。通过在每个网格上使用多类别的Softmax分类器，可以对目标进行分类(20)。</p>
 <p><strong>5.损失函数：</strong> YOLOv1使用一个综合的损失函数来同时优化边界框的位置预测和类别预测。损失函数考虑了边界框的位置误差、类别预测的置信度和类别预测的准确性，以综合评估模型的性能。</p>
+<hr>
 <h2 id="yolo算法原理"><a href="#yolo算法原理" class="headerlink" title="yolo算法原理"></a>yolo算法原理</h2><p> <strong>1. 网络结构</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230711153954.png"><br> <strong>2. 损失函数</strong><br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230711153301.png"></p>
+<hr>
 <h2 id="yolov1分析"><a href="#yolov1分析" class="headerlink" title="yolov1分析"></a>yolov1分析</h2><p><strong>1. 优点：</strong> 快速，简单。<br><strong>2. 缺点：</strong> </p>
 <ul>
 <li>每个单元只能预测一个类别（后20为里面去概率最大的值）；</li>
 <li>小物体检测效果一般，长宽比可选但是单一。</li>
 </ul>
-<h1 id="YOLOV2学习"><a href="#YOLOV2学习" class="headerlink" title="YOLOV2学习"></a>YOLOV2学习</h1><h2 id="改进："><a href="#改进：" class="headerlink" title="改进："></a>改进：</h2><ol>
-<li>舍弃Dropout，卷积后全部加如Batch Normalization,加入了归一化操作（CONV-BN），经过BN处理后，提升了2%的map。</li>
-<li>更大的分辨率，448*448，提升了约4%的map。</li>
-<li>适应DarkNet网络 ，实际输入416<em>416，没有FC层，做了5此降采样。（S</em>S=13*13）</li>
-<li>聚类提取：先验框。用聚类算法求先验框的w和h(k值=5)，K-means聚类中的距离：d=1-IOU。</li>
-<li>先验框不能提高map值，但是可以提高召回率recall。</li>
-<li>坐标值：预测相对位置，有tx,ty。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230711171155.png"></li>
-</ol>
+<hr>
+<h1 id="YOLOV2学习"><a href="#YOLOV2学习" class="headerlink" title="YOLOV2学习"></a>YOLOV2学习</h1><h2 id="改进："><a href="#改进：" class="headerlink" title="改进："></a>改进：</h2><p><strong>1. 舍弃Dropout</strong> ，卷积后全部加如Batch Normalization,加入了归一化操作（CONV-BN），经过BN处理后，提升了2%的map。<br><strong>2. 更大的分辨率</strong> ，448<em>448，提升了约4%的map。<br><strong>3. 适应DarkNet网络</strong>  ，实际输入416</em>416，没有FC层，做了5此降采样。（S<em>S=13</em>13）<br><strong>4. 聚类提取</strong> ：先验框。用聚类算法求先验框的w和h(k值=5)，K-means聚类中的距离：d=1-IOU，先验框不能提高map值，但是可以提高召回率recall；坐标值：预测相对位置，有tx,ty。</p>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230711171155.png"></p>
+<hr>
+<p><strong>5. 多尺度融合：</strong> 输入图像的大小可以不固定。  </p>
+<h2 id="感受野"><a href="#感受野" class="headerlink" title="感受野"></a>感受野</h2><p><strong>1. 概念：</strong> 最后一个特征图中的点，相当于原始输入图像的大小。eg:下图中的感受野大小就是5*5 。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230713112625.png"></p>
+<p><strong>2. 作用</strong> 模型的感受野越大，图像识别的全局性就越好。</p>
+<p><strong>3.卷积核的设置：</strong> （大or小？）<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230713113401.png"></p>
+<p><strong>4. YOLOV2对感受野的改进：</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230713114310.png"></p>
+<p>融合方法：3072=1024+4*512；</p>
+<hr>
+<p>学习参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11K41167Ar?p=19&spm_id_from=pageDriver&vd_source=ae1ca2840db393ed378fd438994df72e">bilibili唐博士带你学ai</a></p>
 
       
     </div>
