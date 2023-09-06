@@ -6,15 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023 | Hexo</title>
+  <title>vscode OpenCV C++环境配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="确定版本 github官网  下载mingw(最新版可以) MinGW-w64下载往下翻  配置环境变量：”D:\software\mingw-w64\mingw64\bin”  检查   下载cmake(版本必须对应)3.21.3 cmake官网  环境变量配置：”D:\software\cmake\cmake-3.21.3-windows-x86_64\bin”  检查：  打开cmake-g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode OpenCV C++环境配置">
+<meta property="og:url" content="http://example.com/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="确定版本 github官网  下载mingw(最新版可以) MinGW-w64下载往下翻  配置环境变量：”D:\software\mingw-w64\mingw64\bin”  检查   下载cmake(版本必须对应)3.21.3 cmake官网  环境变量配置：”D:\software\cmake\cmake-3.21.3-windows-x86_64\bin”  检查：  打开cmake-g">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135030.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135835.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135615.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135236.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135436.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20140458.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20140625.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20141001.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20141422.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/hpyy7v3pcncpy_84da9c697a904997a04aaf5dbd5d2c96.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142638.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142709.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142916.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20143616.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20153635.png">
+<meta property="article:published_time" content="2023-09-06T12:47:15.000Z">
+<meta property="article:modified_time" content="2023-09-06T12:47:52.924Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135030.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,157 +170,214 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vscode-OpenCV-C-环境配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      vscode OpenCV C++环境配置
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+
+        
+        <a href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
   	<time datetime="2023-09-06T12:47:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">vscode OpenCV C++环境配置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="确定版本"><a href="#确定版本" class="headerlink" title="确定版本"></a>确定版本</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/huihut/OpenCV-MinGW-Build">github官网</a><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135030.png"></li>
+</ul>
+<h2 id="下载mingw-最新版可以"><a href="#下载mingw-最新版可以" class="headerlink" title="下载mingw(最新版可以)"></a>下载mingw(最新版可以)</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/">MinGW-w64</a>下载<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135835.png"><br>往下翻<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135615.png"></p>
+</li>
+<li><p>配置环境变量：”D:\software\mingw-w64\mingw64\bin”</p>
+</li>
+<li><p>检查<img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135236.png"></p>
+</li>
+</ul>
+<h2 id="下载cmake-版本必须对应-3-21-3"><a href="#下载cmake-版本必须对应-3-21-3" class="headerlink" title="下载cmake(版本必须对应)3.21.3"></a>下载cmake(版本必须对应)3.21.3</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://cmake.org/files/v3.21/">cmake官网</a><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135436.png"></p>
+</li>
+<li><p>环境变量配置：”D:\software\cmake\cmake-3.21.3-windows-x86_64\bin”</p>
+</li>
+<li><p>检查：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20140458.png"></p>
+</li>
+<li><p>打开cmake-gui.exe，之后要用<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20140625.png"></p>
+</li>
+</ul>
+<h2 id="下载opencv4-5-5"><a href="#下载opencv4-5-5" class="headerlink" title="下载opencv4.5.5"></a>下载opencv4.5.5</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://opencv.org/releases/">opencv官网</a><br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20141001.png"></p>
+</li>
+<li><p>下载生成<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20141422.png"></p>
+</li>
+</ul>
+<h2 id="配置cmake-gui-exe"><a href="#配置cmake-gui-exe" class="headerlink" title="配置cmake-gui.exe"></a>配置cmake-gui.exe</h2><ul>
+<li><p>点击Configure按钮，选择MinGW Makefiles本地编译器<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/hpyy7v3pcncpy_84da9c697a904997a04aaf5dbd5d2c96.png"></p>
+</li>
+<li><p>指定你的gcc和g++路径<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142638.png"><br> （在x64文件下新建MinGW文件夹）</p>
+</li>
+<li><p>点击Configure<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142709.png"></p>
+</li>
+<li><p>看到Configuring done后再次点击Configure后再点击Generate<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142916.png"></p>
+</li>
+</ul>
+<h2 id="编译opencv"><a href="#编译opencv" class="headerlink" title="编译opencv"></a>编译opencv</h2><ul>
+<li><p>到刚刚的文件目录下PS D:\software\opencv\opencv\build\x64\MinGW<br>进入终端，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minGW32-make -j 4</span><br></pre></td></tr></table></figure>
+<p> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20143616.png"></p>
+</li>
+<li><p>完成后，再输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minGW32-make install</span><br></pre></td></tr></table></figure></li>
+<li><p>配置环境变量D:\software\opencv\opencv\build\x64\MinGW\bin</p>
+</li>
+</ul>
+<h2 id="配置vscode"><a href="#配置vscode" class="headerlink" title="配置vscode"></a>配置vscode</h2><ul>
+<li>到工作目录下的.vscode文件夹下新建三个文件：c_cpp_properties.json、launch.json以及tasks.json</li>
+</ul>
+<p>c_cpp_properties.json</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;win&quot;,</span><br><span class="line">            &quot;includePath&quot;: [</span><br><span class="line">                &quot;$&#123;workspaceFolder&#125;/**&quot;,</span><br><span class="line">                /*此处修改为你对应的路径*/</span><br><span class="line">                &quot;D:/software/mingw-w64/mingw64/include&quot;,</span><br><span class="line">                &quot;D:/software/opencv/opencv/build/x64/MinGW/install/include&quot;,</span><br><span class="line">                &quot;D:/software/opencv/opencv/build/x64/MinGW/install/include/opencv2&quot;</span><br><span class="line">            ],</span><br><span class="line">            &quot;defines&quot;: [</span><br><span class="line">                &quot;_DEBUG&quot;,</span><br><span class="line">                &quot;UNICODE&quot;,</span><br><span class="line">                &quot;_UNICODE&quot;</span><br><span class="line">            ],</span><br><span class="line">            /*此处修改为本机gcc编译器所在的对应路径*/</span><br><span class="line">            &quot;compilerPath&quot;: &quot;D:/software/mingw-w64/mingw64/bin/gcc.exe&quot;,</span><br><span class="line">            &quot;cStandard&quot;: &quot;c11&quot;,</span><br><span class="line">            &quot;cppStandard&quot;: &quot;c++17&quot;,</span><br><span class="line">            &quot;intelliSenseMode&quot;: &quot;clang-x64&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;version&quot;: 4</span><br><span class="line">  &#125;</span><br><span class="line">```  </span><br><span class="line">  launch.json</span><br></pre></td></tr></table></figure>
+<p>{<br>    “version”: “0.2.0”,<br>    “configurations”: [<br>        {<br>            “name”: “Opencv4.5.5 debug”, &#x2F;&#x2F; 配置名称，将会在启动配置的下拉菜单中显示<br>            “type”: “cppdbg”, &#x2F;&#x2F; 配置类型，这里只能为cppdbg<br>            “request”: “launch”, &#x2F;&#x2F; 请求配置类型，可以为launch（启动）或attach（附加）<br>            “program”: “${fileDirname}&#x2F;${fileBasenameNoExtension}.exe”, &#x2F;&#x2F; 将要进行调试的程序的路径<br>            “args”: [], &#x2F;&#x2F; 程序调试时传递给程序的命令行参数，一般设为空即可<br>            “stopAtEntry”: false, &#x2F;&#x2F; 设为true时程序将暂停在程序入口处，一般设置为false<br>            “cwd”: “${workspaceFolder}”, &#x2F;&#x2F; 调试程序时的工作目录，一般为${workspaceRoot}即代码所在目录，根据自身情况设定为${fileDirname}<br>            “environment”: [],<br>            “externalConsole”: false, &#x2F;&#x2F; 调试时是否显示控制台窗口，设置为true时会弹出控制台出来，这个随意<br>            “MIMode”: “gdb”,<br>            &#x2F;<em>此处修改</em>&#x2F;<br>            “miDebuggerPath”: “D:&#x2F;software&#x2F;mingw-w64&#x2F;mingw64&#x2F;bin&#x2F;gdb.exe”, &#x2F;&#x2F; miDebugger的路径，注意这里要与MinGw的路径对应<br>            “setupCommands”: [<br>                {<br>                    “description”: “Enable pretty-printing for gdb”,<br>                    “text”: “-enable-pretty-printing”,<br>                    “ignoreFailures”: false<br>                }<br>            ],<br>            “preLaunchTask”: “Opencv4.5.5 compile task”  &#x2F;&#x2F; 需要与tasks.json中的<code>label</code>字段保持一致<br>        }<br>    ]<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasks.json</span><br></pre></td></tr></table></figure>
+<p>{<br>    &#x2F;&#x2F; See <a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/?LinkId=733558">https://go.microsoft.com/fwlink/?LinkId=733558</a><br>    &#x2F;&#x2F; for the documentation about the tasks.json format<br>    “version”: “2.0.0”,<br>    “tasks”: [<br>        {<br>              “type”: “shell”,<br>              “label”: “Opencv4.5.5 compile task”,<br>                &#x2F;<em>修改</em>&#x2F;<br>              “command”: “D:&#x2F;software&#x2F;mingw-w64&#x2F;mingw64&#x2F;bin&#x2F;g++.exe”,<br>              “args”: [<br>                  “-g”,<br>                  “-std&#x3D;c++11”,<br>                  “${file}”,<br>                  “-o”,<br>                  “${fileDirname}\${fileBasenameNoExtension}.exe”,<br>                  &#x2F;<em>注意：此处导入的路径为编译后的opencv路径，请勿导入原始的opencv路径</em>&#x2F;<br>                  “-I”, “D:&#x2F;software&#x2F;opencv&#x2F;opencv&#x2F;build&#x2F;x64&#x2F;MinGW&#x2F;install&#x2F;include&#x2F;“,<br>                  “-I”, “D:&#x2F;software&#x2F;opencv&#x2F;opencv&#x2F;build&#x2F;x64&#x2F;MinGW&#x2F;install&#x2F;include&#x2F;opencv2&#x2F;“,<br>                  “-L”, “D:&#x2F;software&#x2F;opencv&#x2F;opencv&#x2F;build&#x2F;x64&#x2F;MinGW&#x2F;install&#x2F;x64&#x2F;mingw&#x2F;bin&#x2F;lib*”<br>              ],&#x2F;&#x2F; 编译命令参数<br>              “options”: {<br>                   &#x2F;<em>修改</em>&#x2F;<br>                  “cwd”: “D:&#x2F;software&#x2F;mingw-w64&#x2F;mingw64&#x2F;bin”<br>              },<br>              “problemMatcher”: [<br>                  “$gcc”<br>              ],<br>              “group”: {<br>                  “kind”: “build”,<br>                  “isDefault”: true<br>              },<br>              “presentation”: {<br>                  “panel”: “new”, &#x2F;&#x2F;这里shared表示共享，改成new之后每个进程创建新的端口<br>              }<br>        }<br>    ]<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">## 检验是否配置成功</span><br><span class="line">```C++</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;opencv2/opencv.hpp&gt;</span><br><span class="line">using namespace cv;</span><br><span class="line">using namespace std;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    cv::Mat img = cv::imread(&quot;E:/code/C++/opencv/test/1.jpg&quot;);</span><br><span class="line">    cv::imshow(&quot;img&quot;, img);</span><br><span class="line">    cv::waitKey(0);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20153635.png"></p>
+<p>参考<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1210289">博客</a></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:45:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vscode C++环境配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">vscode C++环境配置</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:41:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">PicGo+Github 搭建图床</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:34:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/hello-world/" class="archive-article-date">
-  	<time datetime="2023-09-06T09:42:15.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -323,8 +400,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

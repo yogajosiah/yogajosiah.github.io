@@ -152,6 +152,437 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vscode-OpenCV-C-环境配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">vscode OpenCV C++环境配置</a>
+    </h1>
+  
+
+        
+        <a href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2023-09-06T12:47:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="确定版本"><a href="#确定版本" class="headerlink" title="确定版本"></a>确定版本</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/huihut/OpenCV-MinGW-Build">github官网</a><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135030.png"></li>
+</ul>
+<h2 id="下载mingw-最新版可以"><a href="#下载mingw-最新版可以" class="headerlink" title="下载mingw(最新版可以)"></a>下载mingw(最新版可以)</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/">MinGW-w64</a>下载<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135835.png"><br>往下翻<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135615.png"></p>
+</li>
+<li><p>配置环境变量：”D:\software\mingw-w64\mingw64\bin”</p>
+</li>
+<li><p>检查<img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135236.png"></p>
+</li>
+</ul>
+<h2 id="下载cmake-版本必须对应-3-21-3"><a href="#下载cmake-版本必须对应-3-21-3" class="headerlink" title="下载cmake(版本必须对应)3.21.3"></a>下载cmake(版本必须对应)3.21.3</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://cmake.org/files/v3.21/">cmake官网</a><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135436.png"></p>
+</li>
+<li><p>环境变量配置：”D:\software\cmake\cmake-3.21.3-windows-x86_64\bin”</p>
+</li>
+<li><p>检查：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20140458.png"></p>
+</li>
+<li><p>打开cmake-gui.exe，之后要用<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20140625.png"></p>
+</li>
+</ul>
+<h2 id="下载opencv4-5-5"><a href="#下载opencv4-5-5" class="headerlink" title="下载opencv4.5.5"></a>下载opencv4.5.5</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://opencv.org/releases/">opencv官网</a><br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20141001.png"></p>
+</li>
+<li><p>下载生成<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20141422.png"></p>
+</li>
+</ul>
+<h2 id="配置cmake-gui-exe"><a href="#配置cmake-gui-exe" class="headerlink" title="配置cmake-gui.exe"></a>配置cmake-gui.exe</h2><ul>
+<li><p>点击Configure按钮，选择MinGW Makefiles本地编译器<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/hpyy7v3pcncpy_84da9c697a904997a04aaf5dbd5d2c96.png"></p>
+</li>
+<li><p>指定你的gcc和g++路径<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142638.png"><br> （在x64文件下新建MinGW文件夹）</p>
+</li>
+<li><p>点击Configure<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142709.png"></p>
+</li>
+<li><p>看到Configuring done后再次点击Configure后再点击Generate<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20142916.png"></p>
+</li>
+</ul>
+<h2 id="编译opencv"><a href="#编译opencv" class="headerlink" title="编译opencv"></a>编译opencv</h2><ul>
+<li><p>到刚刚的文件目录下PS D:\software\opencv\opencv\build\x64\MinGW<br>进入终端，输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minGW32-make -j 4</span><br></pre></td></tr></table></figure>
+<p> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20143616.png"></p>
+</li>
+<li><p>完成后，再输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minGW32-make install</span><br></pre></td></tr></table></figure></li>
+<li><p>配置环境变量D:\software\opencv\opencv\build\x64\MinGW\bin</p>
+</li>
+</ul>
+<h2 id="配置vscode"><a href="#配置vscode" class="headerlink" title="配置vscode"></a>配置vscode</h2><ul>
+<li>到工作目录下的.vscode文件夹下新建三个文件：c_cpp_properties.json、launch.json以及tasks.json</li>
+</ul>
+<p>c_cpp_properties.json</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;win&quot;,</span><br><span class="line">            &quot;includePath&quot;: [</span><br><span class="line">                &quot;$&#123;workspaceFolder&#125;/**&quot;,</span><br><span class="line">                /*此处修改为你对应的路径*/</span><br><span class="line">                &quot;D:/software/mingw-w64/mingw64/include&quot;,</span><br><span class="line">                &quot;D:/software/opencv/opencv/build/x64/MinGW/install/include&quot;,</span><br><span class="line">                &quot;D:/software/opencv/opencv/build/x64/MinGW/install/include/opencv2&quot;</span><br><span class="line">            ],</span><br><span class="line">            &quot;defines&quot;: [</span><br><span class="line">                &quot;_DEBUG&quot;,</span><br><span class="line">                &quot;UNICODE&quot;,</span><br><span class="line">                &quot;_UNICODE&quot;</span><br><span class="line">            ],</span><br><span class="line">            /*此处修改为本机gcc编译器所在的对应路径*/</span><br><span class="line">            &quot;compilerPath&quot;: &quot;D:/software/mingw-w64/mingw64/bin/gcc.exe&quot;,</span><br><span class="line">            &quot;cStandard&quot;: &quot;c11&quot;,</span><br><span class="line">            &quot;cppStandard&quot;: &quot;c++17&quot;,</span><br><span class="line">            &quot;intelliSenseMode&quot;: &quot;clang-x64&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;version&quot;: 4</span><br><span class="line">  &#125;</span><br><span class="line">```  </span><br><span class="line">  launch.json</span><br></pre></td></tr></table></figure>
+<p>{<br>    “version”: “0.2.0”,<br>    “configurations”: [<br>        {<br>            “name”: “Opencv4.5.5 debug”, &#x2F;&#x2F; 配置名称，将会在启动配置的下拉菜单中显示<br>            “type”: “cppdbg”, &#x2F;&#x2F; 配置类型，这里只能为cppdbg<br>            “request”: “launch”, &#x2F;&#x2F; 请求配置类型，可以为launch（启动）或attach（附加）<br>            “program”: “${fileDirname}&#x2F;${fileBasenameNoExtension}.exe”, &#x2F;&#x2F; 将要进行调试的程序的路径<br>            “args”: [], &#x2F;&#x2F; 程序调试时传递给程序的命令行参数，一般设为空即可<br>            “stopAtEntry”: false, &#x2F;&#x2F; 设为true时程序将暂停在程序入口处，一般设置为false<br>            “cwd”: “${workspaceFolder}”, &#x2F;&#x2F; 调试程序时的工作目录，一般为${workspaceRoot}即代码所在目录，根据自身情况设定为${fileDirname}<br>            “environment”: [],<br>            “externalConsole”: false, &#x2F;&#x2F; 调试时是否显示控制台窗口，设置为true时会弹出控制台出来，这个随意<br>            “MIMode”: “gdb”,<br>            &#x2F;<em>此处修改</em>&#x2F;<br>            “miDebuggerPath”: “D:&#x2F;software&#x2F;mingw-w64&#x2F;mingw64&#x2F;bin&#x2F;gdb.exe”, &#x2F;&#x2F; miDebugger的路径，注意这里要与MinGw的路径对应<br>            “setupCommands”: [<br>                {<br>                    “description”: “Enable pretty-printing for gdb”,<br>                    “text”: “-enable-pretty-printing”,<br>                    “ignoreFailures”: false<br>                }<br>            ],<br>            “preLaunchTask”: “Opencv4.5.5 compile task”  &#x2F;&#x2F; 需要与tasks.json中的<code>label</code>字段保持一致<br>        }<br>    ]<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasks.json</span><br></pre></td></tr></table></figure>
+<p>{<br>    &#x2F;&#x2F; See <a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/?LinkId=733558">https://go.microsoft.com/fwlink/?LinkId=733558</a><br>    &#x2F;&#x2F; for the documentation about the tasks.json format<br>    “version”: “2.0.0”,<br>    “tasks”: [<br>        {<br>              “type”: “shell”,<br>              “label”: “Opencv4.5.5 compile task”,<br>                &#x2F;<em>修改</em>&#x2F;<br>              “command”: “D:&#x2F;software&#x2F;mingw-w64&#x2F;mingw64&#x2F;bin&#x2F;g++.exe”,<br>              “args”: [<br>                  “-g”,<br>                  “-std&#x3D;c++11”,<br>                  “${file}”,<br>                  “-o”,<br>                  “${fileDirname}\${fileBasenameNoExtension}.exe”,<br>                  &#x2F;<em>注意：此处导入的路径为编译后的opencv路径，请勿导入原始的opencv路径</em>&#x2F;<br>                  “-I”, “D:&#x2F;software&#x2F;opencv&#x2F;opencv&#x2F;build&#x2F;x64&#x2F;MinGW&#x2F;install&#x2F;include&#x2F;“,<br>                  “-I”, “D:&#x2F;software&#x2F;opencv&#x2F;opencv&#x2F;build&#x2F;x64&#x2F;MinGW&#x2F;install&#x2F;include&#x2F;opencv2&#x2F;“,<br>                  “-L”, “D:&#x2F;software&#x2F;opencv&#x2F;opencv&#x2F;build&#x2F;x64&#x2F;MinGW&#x2F;install&#x2F;x64&#x2F;mingw&#x2F;bin&#x2F;lib*”<br>              ],&#x2F;&#x2F; 编译命令参数<br>              “options”: {<br>                   &#x2F;<em>修改</em>&#x2F;<br>                  “cwd”: “D:&#x2F;software&#x2F;mingw-w64&#x2F;mingw64&#x2F;bin”<br>              },<br>              “problemMatcher”: [<br>                  “$gcc”<br>              ],<br>              “group”: {<br>                  “kind”: “build”,<br>                  “isDefault”: true<br>              },<br>              “presentation”: {<br>                  “panel”: “new”, &#x2F;&#x2F;这里shared表示共享，改成new之后每个进程创建新的端口<br>              }<br>        }<br>    ]<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">## 检验是否配置成功</span><br><span class="line">```C++</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;opencv2/opencv.hpp&gt;</span><br><span class="line">using namespace cv;</span><br><span class="line">using namespace std;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    cv::Mat img = cv::imread(&quot;E:/code/C++/opencv/test/1.jpg&quot;);</span><br><span class="line">    cv::imshow(&quot;img&quot;, img);</span><br><span class="line">    cv::waitKey(0);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20153635.png"></p>
+<p>参考<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1210289">博客</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vscode-C-环境配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">vscode C++环境配置</a>
+    </h1>
+  
+
+        
+        <a href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2023-09-06T12:45:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="下载mingw-最新版可以"><a href="#下载mingw-最新版可以" class="headerlink" title="下载mingw(最新版可以)"></a>下载mingw(最新版可以)</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/">MinGW下载</a><br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135835.png"></p>
+</li>
+<li><p>往下翻<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135615.png"></p>
+<blockquote>
+<p>posix和win32的区别:”POSIX”和”Win32”是不同的API标准，都用于在Windows上开发和执行应用程序;<br>如果你希望你的代码能够在Windows和类Unix系统上运行，那么使用POSIX API可能更具有优势，因为它可以帮助你实现更好的跨平台兼容性。<br>如果你要开发纯粹的Windows应用程序，特别是需要利用Windows特定功能的应用程序，那么使用Win32 API可能更适合，因为它可以充分利用Windows操作系统的功能和特性。</p>
+</blockquote>
+</li>
+<li><p>配置环境变量：”D:\software\mingw-w64\mingw64-posix-seh\bin”</p>
+</li>
+<li><p>检查<img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-02%20135236.png"></p>
+</li>
+</ul>
+<h2 id="创建helloworld运行程序"><a href="#创建helloworld运行程序" class="headerlink" title="创建helloworld运行程序"></a>创建helloworld运行程序</h2><ul>
+<li><p>创建C++文件夹,创建新文件夹,在该文件夹下新建一个helloworld.cpp文件文件,复制以下代码;</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>文件结构如下,点击运行<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-16%20191316.png"></p>
+</li>
+<li><p>选择g++.exe<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-16%20191543.png"><br> 终端显示以下内容即为运行成功:<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-16%20191955.png"><br> 运行后出现settings.json文件和tasks.json文件</p>
+</li>
+<li><p>按F1,打开C&#x2F;C++:Edit Configurations(UI)<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-16%20191722.png"></p>
+</li>
+<li><p>查看设置,指定编译器为g++.exe,IntelliSense模式为gcc-x64<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-16%20192152.png"></p>
+</li>
+<li><p>回到helloworld.cpp文件,点击右上角的设置,选择g++.exe<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-16%20193142.png"></p>
+</li>
+<li><p>修改生成的launch.json文件,将externalConsole改为true,即生成内容在新建的终端窗口内显示.</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;C/C++: g++.exe 生成和调试活动文件&quot;</span>,</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;cppdbg&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;program&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span>,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>: [],</span><br><span class="line">            <span class="string">&quot;stopAtEntry&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">            <span class="string">&quot;cwd&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span>,</span><br><span class="line">            <span class="string">&quot;environment&quot;</span>: [],</span><br><span class="line">            <span class="string">&quot;externalConsole&quot;</span>: <span class="literal">true</span>, <span class="comment">//修改这一行,将false改为true</span></span><br><span class="line">            <span class="string">&quot;MIMode&quot;</span>: <span class="string">&quot;gdb&quot;</span>,</span><br><span class="line">            <span class="string">&quot;miDebuggerPath&quot;</span>: <span class="string">&quot;D:\\software\\mingw-w64\\mingw64-posix-seh\\bin\\gdb.exe&quot;</span>,</span><br><span class="line">            <span class="string">&quot;setupCommands&quot;</span>: [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;description&quot;</span>: <span class="string">&quot;为 gdb 启用整齐打印&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;text&quot;</span>: <span class="string">&quot;-enable-pretty-printing&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;description&quot;</span>: <span class="string">&quot;将反汇编风格设置为 Intel&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;text&quot;</span>: <span class="string">&quot;-gdb-set disassembly-flavor intel&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;preLaunchTask&quot;</span>: <span class="string">&quot;C/C++: g++.exe 生成活动文件&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;2.0.0&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置好之后按F5再运行一遍程序,选择C++(GDB&#x2F;LLDB)<br> <img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-16%20192818.png"></p>
+</li>
+<li><p>运行结果如下:<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-08-16%20193706.png"><br>配置成功.</p>
+</li>
+</ul>
+<p>参考资料:<br>博客 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/bpf-1024/p/11597000.html">VisualStudioCode(vscode)配置C&#x2F;C++环境</a><br>官网 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/cpp/config-mingw#_create-a-hello-world-app">将GCC与MinGW结合使用</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-PicGo-Github-搭建图床" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">PicGo+Github 搭建图床</a>
+    </h1>
+  
+
+        
+        <a href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" class="archive-article-date">
+  	<time datetime="2023-09-06T12:41:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Github-创建仓库"><a href="#Github-创建仓库" class="headerlink" title="Github 创建仓库"></a>Github 创建仓库</h2><p><strong>1. 在<a target="_blank" rel="noopener" href="https://github.com/">Github</a>上创建一个新的仓库，填写仓库信息。</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710135059.png"></p>
+<p><strong>2. 打开设置生成一个Token</strong></p>
+<ul>
+<li><p>进入settings页面<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710135722.png"></p>
+</li>
+<li><p>在该页面左侧的最下面找到<strong>Developer settings</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710135851.png"></p>
+</li>
+<li><p>选择左侧的Personal access tokens,我选择的是经典款，点击Generate new token<img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710140313.png"></p>
+</li>
+<li><p>填写note，勾选repo，点击生成按钮Generate token,将生成的token复制保存，不然就需要重新生成。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710140605.png"></p>
+</li>
+</ul>
+<hr>
+<h2 id="PicGo配置"><a href="#PicGo配置" class="headerlink" title="PicGo配置"></a>PicGo配置</h2><p><strong>1. 安装PicGo</strong></p>
+<p>我的下载地址<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/picgo/releases">PicGo-Setup-2.4.0-beta.3-x64.exe
+</a></p>
+<p><strong>2. 配置PicGo</strong></p>
+<p><strong>图床配置名：</strong> 不用管；<br><strong>设置仓库名：</strong> [Github用户名]&#x2F;[第一步新建的仓库名]；<br><strong>分支：</strong> main；<br><strong>设定token:</strong> 把刚刚复制保存到的tocken粘贴过来；<br><strong>指定路径：</strong> 选填，如果填写，则会存储在此路径下；<br><strong>设定自定义域名：</strong> 我没设置，PicGo帮我自动生成了。</p>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710141724.png"></p>
+<p><strong>保存你的设置，shift+win+R截屏之后，按快捷键shift+ctrl+P就可以自动上传并生成URL</strong></p>
+<hr>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p><strong>1.上传失败</strong><br>可以查看日志来判断具体是哪里出问题了<br>“C:\Users\ge200\AppData\Roaming\picgo\picgo.log”</p>
+<p><strong>2.上传成功但是实现的是图裂</strong><br>可能的原因：</p>
+<ul>
+<li>仓库私有:去仓库设置里里面改成public</li>
+<li>域名不正确：如果没有自己的域名，不如下面的自定义域名就空着。</li>
+</ul>
+<hr>
+<p><strong>ps:想要删库在仓库setting的最下面了，整个操作过程都需要代理服务器的帮助</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/20230710143115.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2023-09-06T12:34:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>安装git</li>
+<li>安装nodejs</li>
+<li>新建github仓库，命名为 <em>用户名+github.io</em> 的格式</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-05%20234651.png"></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ul>
+<li>新建一个blog文件夹</li>
+<li>右键 <em>git bush here</em> ，下载hexo<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure></li>
+<li>检查是否下载成功 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-06%20173642.png"></p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><ul>
+<li>在blog文件夹下右键 <em>git bush here</em> ，初始化<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+<li>安装必备组件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>生成静态网页<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
+<li>打开本地服务器<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
+<li>打开<a target="_blank" rel="noopener" href="http://localhost:4000/%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E7%94%9F%E6%88%90%E7%9A%84%E5%8D%9A%E5%AE%A2">http://localhost:4000/即可看到生成的博客</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-06%20174752.png"></p>
+<ul>
+<li>ctrl+C关闭</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-06%20174946.png"></p>
+<h2 id="将hexo部署到github上"><a href="#将hexo部署到github上" class="headerlink" title="将hexo部署到github上"></a>将hexo部署到github上</h2><ul>
+<li><p>在目录下安装git的部署插件</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置_config.yml文件</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-06%20200623.png"></p>
+<ul>
+<li>推送到远端<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-06%20200739.png"></p>
+<ul>
+<li>部署成功后访问<a target="_blank" rel="noopener" href="https://yogajosiah.github.io/">https://yogajosiah.github.io</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-06%20201002.png"></p>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-06%20201032.png"></p>
+<h2 id="主题更改"><a href="#主题更改" class="headerlink" title="主题更改"></a>主题更改</h2><ul>
+<li>右键 <em>git bush here</em> ，克隆github上的主题<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure></li>
+<li>下载后更改_config.yml文件，找到theme: landspace，改成yilia</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-06%20202800.png"></p>
+<ul>
+<li><p>清理一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推到远端</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>参考资料<br>b站：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty/?spm_id_from=333.337.search-card.all.click&vd_source=ae1ca2840db393ed378fd438994df72e">https://www.bilibili.com/video/BV1Yb411a7ty/?spm_id_from=333.337.search-card.all.click&amp;vd_source=ae1ca2840db393ed378fd438994df72e</a><br>博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhcncn/p/4097881.html">https://www.cnblogs.com/zhcncn/p/4097881.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
