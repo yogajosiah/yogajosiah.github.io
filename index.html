@@ -152,6 +152,663 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据库远程连接" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/11/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">数据库远程连接</a>
+    </h1>
+  
+
+        
+        <a href="/2023/11/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="archive-article-date">
+  	<time datetime="2023-11-30T03:50:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="PolarDB-MySQL"><a href="#PolarDB-MySQL" class="headerlink" title="PolarDB MySQL"></a>PolarDB MySQL</h1><h2 id="1-实验目的"><a href="#1-实验目的" class="headerlink" title="1. 实验目的"></a>1. 实验目的</h2><ul>
+<li>熟悉PolarDB for MySQL使用方式，了解阿里云dms实验平台，并学会使用Python或Java语言实现对数据库的远程连接操作。</li>
+<li>了解如何创建PolarDB MySQL版Serverless集群和资源包。</li>
+<li>学会如何通过数据管理DMS连接PolarDB MySQL版Serverless集群并使用。</li>
+</ul>
+<h2 id="2-相关概念"><a href="#2-相关概念" class="headerlink" title="2. 相关概念"></a>2. 相关概念</h2><ul>
+<li><strong>PolarDB</strong>是阿里巴巴自研的新一代云原生数据库，在计算存储分离架构下，利用了软硬件结合的优势，为用户提供具备极致弹性、高性能、海量存储、安全可靠的数据库服务。100%兼容MySQL和PostgreSQL生态，高度兼容Oracle语法。</li>
+<li><strong>PolarDB MySQL</strong> 是PolarDB的三个引擎之一</li>
+</ul>
+<h2 id="3-实验步骤"><a href="#3-实验步骤" class="headerlink" title="3. 实验步骤"></a>3. 实验步骤</h2><h3 id="3-1-购买产品"><a href="#3-1-购买产品" class="headerlink" title="3.1 购买产品"></a>3.1 购买产品</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://free.aliyun.com/?spm=a2c4g.2587923.0.0.556f5ed2W27kMk">阿里云免费试用网站</a> </li>
+<li>左侧 <strong>“产品类别” -&gt; “数据库” -&gt; “关系型数据库”</strong></li>
+<li>在免费试用产品区域的云原生数据库 <strong>PolarDB MySQL版 Serverless 5000PCU 100 GB</strong>卡片上单击<strong>立即试用</strong></li>
+<li>进入用户管理页面，有两个产品，一个是存储包，一个是资源包，点击<strong>管理关联实例</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-01%20160435.png"></li>
+<li>打开集群列表，选择你所购买的地区，有一个处在<strong>运行中</strong>状态的集群<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-01%20161356.png"></li>
+</ul>
+<h3 id="3-2-查看Serverless资源包信息"><a href="#3-2-查看Serverless资源包信息" class="headerlink" title="3.2 查看Serverless资源包信息"></a>3.2 查看Serverless资源包信息</h3><h3 id="3-3-创建数据库账号"><a href="#3-3-创建数据库账号" class="headerlink" title="3.3 创建数据库账号"></a>3.3 创建数据库账号</h3><ul>
+<li>在<strong>集群列表</strong>页面，单击**<strong>集群ID</strong>，进入基本信息页面</li>
+<li>单击左侧导航栏<strong>配置与管理&gt;账号管理</strong>，单击左上方<strong>创建账号</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20223543.png"></li>
+</ul>
+<h3 id="3-4-创建数据库"><a href="#3-4-创建数据库" class="headerlink" title="3.4 创建数据库"></a>3.4 创建数据库</h3><ul>
+<li>单击左侧导航栏<strong>配置与管理&gt;数据库管理</strong>，单击<strong>创建数据库</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20224331.png"></li>
+</ul>
+<h3 id="3-5-使用DMS连接集群"><a href="#3-5-使用DMS连接集群" class="headerlink" title="3.5 使用DMS连接集群"></a>3.5 使用DMS连接集群</h3><ul>
+<li>单击左侧导航栏<strong>配置与管理&gt;数据库管理</strong>，单击对应数据库操作列中的<strong>SQL查询</strong>，在弹出的对话框中，输入您创建的数据库账号和数据库密码，单击<strong>登录</strong>，即可进入页面<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20230106.png"></li>
+</ul>
+<h3 id="3-6-在我的数据库myworld-data中创建test-table表"><a href="#3-6-在我的数据库myworld-data中创建test-table表" class="headerlink" title="3.6 在我的数据库myworld_data中创建test_table表"></a>3.6 在我的数据库myworld_data中创建test_table表</h3><ul>
+<li><p><strong>创建表</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test_table (</span><br><span class="line">  id <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  name <span class="type">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  age <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>添加值</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test_table (name, age) <span class="keyword">VALUES</span></span><br><span class="line">  (<span class="string">&#x27;John&#x27;</span>, <span class="number">25</span>),</span><br><span class="line">  (<span class="string">&#x27;Mary&#x27;</span>, <span class="number">30</span>),</span><br><span class="line">  (<span class="string">&#x27;Bob&#x27;</span>, <span class="number">35</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查找</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test_table;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/11/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-华为鲲鹏通用计算服务器配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">华为鲲鹏通用计算服务器配置</a>
+    </h1>
+  
+
+        
+        <a href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2023-11-05T05:54:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="1-远程登陆相关知识"><a href="#1-远程登陆相关知识" class="headerlink" title="1.远程登陆相关知识"></a>1.远程登陆相关知识</h2><h3 id="1-1-SSH是安全外壳协议"><a href="#1-1-SSH是安全外壳协议" class="headerlink" title="1.1 SSH是安全外壳协议"></a>1.1 SSH是安全外壳协议</h3><ul>
+<li>SSH(Secure Shell)是建立在应用层和传输层基础上的安全协议，专为远程登陆会话和其他网络服务提供安全性的协议。</li>
+</ul>
+<h3 id="1-2-Shell基本上是一个命令解释器"><a href="#1-2-Shell基本上是一个命令解释器" class="headerlink" title="1.2 Shell基本上是一个命令解释器"></a>1.2 Shell基本上是一个命令解释器</h3><ul>
+<li>Shell是一种用C语言编写的程序，用于接收用的命令，也可以理解为远端的登陆工具。</li>
+</ul>
+<h3 id="1-3-Xshell软件"><a href="#1-3-Xshell软件" class="headerlink" title="1.3 Xshell软件"></a>1.3 Xshell软件</h3><ul>
+<li>Xshell是一个强大的安全终端模拟软件，支持SSH1,SSH2。</li>
+</ul>
+<h2 id="2-Shell远程登陆华为云服务器"><a href="#2-Shell远程登陆华为云服务器" class="headerlink" title="2.Shell远程登陆华为云服务器"></a>2.Shell远程登陆华为云服务器</h2><h3 id="2-1-选择远端登陆工具"><a href="#2-1-选择远端登陆工具" class="headerlink" title="2.1 选择远端登陆工具"></a>2.1 选择远端登陆工具</h3><ul>
+<li>选择合适的Shell（远端登陆工具），Xshell或者windows自带的shell,本次远程登陆使用的windows自带的Windows PowerShell。</li>
+</ul>
+<h3 id="2-2-远程登陆"><a href="#2-2-远程登陆" class="headerlink" title="2.2 远程登陆"></a>2.2 远程登陆</h3><ul>
+<li><p>打开PowerShell输入<br><code>&gt; ssh root@a.b.c.d</code><br>（如果出现报错，见3）</p>
+</li>
+<li><p>出现下图内容则连接成功连接成功。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20144841.png">x<code>    </code></p>
+</li>
+</ul>
+<h3 id="2-3-测试汇编代码"><a href="#2-3-测试汇编代码" class="headerlink" title="2.3 测试汇编代码"></a>2.3 测试汇编代码</h3><ul>
+<li>vim的简单命令：<blockquote>
+<p>新建汇编源文件并编辑</p>
+<blockquote>
+<p><code>vim hello.s</code></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>插入模式(InsertMode)：</p>
+<blockquote>
+<p>按’i’可任意编辑<br>按’a’是从目前光标所在的位置的下一个位置开始输入文字<br>按’o’是插入新的一行，从行首开始输入文字</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>命令行模式：</p>
+<blockquote>
+<p>按’Esc’进入命令行格式<br>  <code>:wq</code> 退出并保存<br>  <code>:q</code>  退出不保存<br>  <code>:%d</code> 删除文件中所有内容</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>新建汇编源文件：<br> <code>vim hello.s</code></p>
+</li>
+<li><p>输入以下代码：</p>
+  <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">.text</span></span><br><span class="line"><span class="symbol">.global</span> tart1</span><br><span class="line"><span class="symbol">tart1:</span></span><br><span class="line">    <span class="keyword">mov</span> x0,<span class="number">#0</span></span><br><span class="line">    <span class="keyword">ldr</span> x1,<span class="symbol">=msg</span></span><br><span class="line">    <span class="keyword">mov</span> x2,len</span><br><span class="line">    <span class="keyword">mov</span> x8,<span class="number">64</span></span><br><span class="line">    <span class="keyword">svc</span> <span class="number">#0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">mov</span> x0,<span class="number">123</span></span><br><span class="line">    <span class="keyword">mov</span> x8,<span class="number">93</span></span><br><span class="line">    <span class="keyword">svc</span> <span class="number">#0</span></span><br><span class="line"><span class="symbol">.data</span></span><br><span class="line"><span class="symbol">msg:</span></span><br><span class="line">    <span class="meta">.ascii</span> <span class="string">&quot;Hello World!\n&quot;</span></span><br><span class="line"><span class="symbol">len</span>=.-msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存文件，运行以下命令将源代码编译为二进制文件：<br><code>as hello.s -o hello.o</code></p>
+</li>
+<li><p>输入以下命令进行来链接:<br><code>ld hello.o -o hello</code></p>
+</li>
+<li><p>输入可执行文件名来执行可执行文件：<br><code>hello</code></p>
+</li>
+<li><p>输出结果如下：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20151051.png"></p>
+</li>
+</ul>
+<h2 id="3-Windows11无法识别ssh命令"><a href="#3-Windows11无法识别ssh命令" class="headerlink" title="3.Windows11无法识别ssh命令"></a>3.Windows11无法识别ssh命令</h2><ul>
+<li>键入ssh命令无法识别，则安装OpenSSH。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20142232.png"></li>
+</ul>
+<h3 id="3-1-下载OpenSSH"><a href="#3-1-下载OpenSSH" class="headerlink" title="3.1 下载OpenSSH"></a>3.1 下载OpenSSH</h3><ul>
+<li>登陆<a target="_blank" rel="noopener" href="https://www.mls-software.com/opensshd.html">OpenSSH官网</a>选择最新版本下载<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20143818.png"></li>
+<li>安装时都选默认安装</li>
+</ul>
+<h3 id="3-2-检验安装成功"><a href="#3-2-检验安装成功" class="headerlink" title="3.2 检验安装成功"></a>3.2 检验安装成功</h3><ul>
+<li>重新打开Windows PowerShell,输入<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; ssh</span><br><span class="line">&gt; shh -help</span><br></pre></td></tr></table></figure>
+检验是否下载成功。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20143929.png"></li>
+</ul>
+<h2 id="4-SSH免密钥登陆"><a href="#4-SSH免密钥登陆" class="headerlink" title="4.SSH免密钥登陆"></a>4.SSH免密钥登陆</h2><h3 id="4-1-在本地机器生成一堆公私钥对"><a href="#4-1-在本地机器生成一堆公私钥对" class="headerlink" title="4.1 在本地机器生成一堆公私钥对"></a>4.1 在本地机器生成一堆公私钥对</h3><ul>
+<li>进入.ssh文件<br><code>cd .ssh</code></li>
+<li>发起公钥请求<br><code>ssh-keygen</code></li>
+<li>然后一路回车<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-10%20173556.png"></li>
+<li>发现在.ssh&#x2F;目录下会生成两个文件：id_rsa是私钥，id_rsa.pub是公钥。</li>
+</ul>
+<h3 id="4-2-复制密钥"><a href="#4-2-复制密钥" class="headerlink" title="4.2 复制密钥"></a>4.2 复制密钥</h3><ul>
+<li>将.pub文件复制到.ssh目录中的authorized_keys中。<br><code>cat id_rsa.pud&gt;&gt;authorized_keys</code></li>
+</ul>
+<h3 id="4-3-设置sshd-config"><a href="#4-3-设置sshd-config" class="headerlink" title="4.3 设置sshd_config"></a>4.3 设置sshd_config</h3><ul>
+<li><p>编辑sshd_config文件<br><code>vim /etc/ssh/sshd_config</code></p>
+<blockquote>
+<p>RSAAuthentication yes（默认开启）<br>PubkeyAuthentication yes<br>AllowTcpForwarding yes（vscode remote 所需，华为云在最后几行，默认为 no）<br>另外，请留意 root 用户能否通过 SSH 登录：PermitRootLogin yes</p>
+</blockquote>
+</li>
+<li><p>保存更改并退出<br><code>systemctl restart sshd.service</code><br><code>logout</code></p>
+</li>
+<li><p>复制私钥到本地</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-matlab" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/10/28/matlab/">matlab</a>
+    </h1>
+  
+
+        
+        <a href="/2023/10/28/matlab/" class="archive-article-date">
+  	<time datetime="2023-10-28T09:59:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Matlab基础语法"><a href="#Matlab基础语法" class="headerlink" title="Matlab基础语法"></a>Matlab基础语法</h1><h2 id="1-入门"><a href="#1-入门" class="headerlink" title="1.入门"></a>1.入门</h2><h3 id="1-1-基本语法"><a href="#1-1-基本语法" class="headerlink" title="1.1 基本语法"></a>1.1 基本语法</h3><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x&#x3D;pi</td>
+<td>使用&#x3D;创建变量</td>
+</tr>
+<tr>
+<td>y&#x3D;sin(-5)</td>
+<td>使用函数计算进行变量赋值</td>
+</tr>
+</tbody></table>
+<h3 id="1-2-桌面管理"><a href="#1-2-桌面管理" class="headerlink" title="1.2 桌面管理"></a>1.2 桌面管理</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>save</td>
+<td>save data.mat</td>
+<td>将当前工作区保存到mat文件中</td>
+</tr>
+<tr>
+<td>load</td>
+<td>load data.mat</td>
+<td>将mat文件中的变量加载到工作区中</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>clear</td>
+<td>清除工作区的所有变量</td>
+</tr>
+<tr>
+<td>clc</td>
+<td>clc</td>
+<td>清除命令行窗口的所有文本</td>
+</tr>
+<tr>
+<td>format</td>
+<td>format long</td>
+<td>更改数值输出时的显示格式</td>
+</tr>
+</tbody></table>
+<h3 id="1-3-数组类型"><a href="#1-3-数组类型" class="headerlink" title="1.3 数组类型"></a>1.3 数组类型</h3><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>4</td>
+<td>标量</td>
+</tr>
+<tr>
+<td>[3,5]</td>
+<td>行向量</td>
+</tr>
+<tr>
+<td>[1;3]</td>
+<td>列向量</td>
+</tr>
+<tr>
+<td>[3,4,5;6,7,8]</td>
+<td>矩阵</td>
+</tr>
+</tbody></table>
+<h3 id="1-4-等间距向量"><a href="#1-4-等间距向量" class="headerlink" title="1.4 等间距向量"></a>1.4 等间距向量</h3><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1:4</td>
+<td>创建一个从1~4的向量，间距默认为1</td>
+</tr>
+<tr>
+<td>1:0.5:4</td>
+<td>创建一个从1~4的向量，间距为0.5</td>
+</tr>
+<tr>
+<td>linspace(1,10,5)</td>
+<td>创建一个从1~10的均匀间隔的向量，共有5个元素</td>
+</tr>
+</tbody></table>
+<h3 id="1-5-创建矩阵"><a href="#1-5-创建矩阵" class="headerlink" title="1.5 创建矩阵"></a>1.5 创建矩阵</h3><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rand(2)</td>
+<td>创建一个2行2列的任意数方阵</td>
+</tr>
+<tr>
+<td>zeros(2,3)</td>
+<td>创建一个全为0的2行3列矩阵</td>
+</tr>
+</tbody></table>
+<h3 id="1-6-索引"><a href="#1-6-索引" class="headerlink" title="1.6 索引"></a>1.6 索引</h3><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A(end,2)</td>
+<td>访问最后一行第2列的元素</td>
+</tr>
+<tr>
+<td>A(2,:)</td>
+<td>访问第二行所有元素</td>
+</tr>
+<tr>
+<td>A(1:3,:)</td>
+<td>访问前三行所有元素</td>
+</tr>
+<tr>
+<td>A(2)&#x3D;11</td>
+<td>将矩阵的第二个元素更改为11</td>
+</tr>
+</tbody></table>
+<h3 id="1-7-数组运算"><a href="#1-7-数组运算" class="headerlink" title="1.7 数组运算"></a>1.7 数组运算</h3><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[1 1;1 1]*[2 2;2 2] ans&#x3D; 4 4 ;4 4</td>
+<td>执行矩阵乘法</td>
+</tr>
+<tr>
+<td>[1 1;1 1].*[2 2;2 2] ans&#x3D; 2 2 ;2 2</td>
+<td>执行元素乘法</td>
+</tr>
+</tbody></table>
+<h2 id="2-数字信号处理相关"><a href="#2-数字信号处理相关" class="headerlink" title="2.数字信号处理相关"></a>2.数字信号处理相关</h2><h3 id="2-1-MATLAB表示序列"><a href="#2-1-MATLAB表示序列" class="headerlink" title="2.1 MATLAB表示序列"></a>2.1 MATLAB表示序列</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n=<span class="number">-5</span>:<span class="number">5</span>;</span><br><span class="line">x=<span class="built_in">sin</span>(<span class="built_in">pi</span>*n/<span class="number">5</span>);</span><br><span class="line">subplot(<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>); <span class="comment">%确定图再框中的大小和布局</span></span><br><span class="line">stem(n,x,<span class="string">&#x27;.&#x27;</span>)   <span class="comment">%画离散的图</span></span><br><span class="line">axis([<span class="number">-5</span>,<span class="number">6</span>,<span class="number">-1.2</span>,<span class="number">1.2</span>])  <span class="comment">%确定图像的范围</span></span><br><span class="line">xlabel(<span class="string">&#x27;n&#x27;</span>); ylabel(<span class="string">&#x27;x(n)&#x27;</span>);  <span class="comment">%添加标签</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-19%20174845.png"></p>
+<p>​</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/10/28/matlab/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-在32位Windows下搭建16位8086汇编语言开发环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">在32位Windows下搭建16位8086汇编语言开发环境</a>
+    </h1>
+  
+
+        
+        <a href="/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+  	<time datetime="2023-09-23T07:23:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="win11环境下使用虚拟机安装32位windows-xp系统搭建16位8086汇编语言开发环境"><a href="#win11环境下使用虚拟机安装32位windows-xp系统搭建16位8086汇编语言开发环境" class="headerlink" title="win11环境下使用虚拟机安装32位windows xp系统搭建16位8086汇编语言开发环境"></a>win11环境下使用虚拟机安装32位windows xp系统搭建16位8086汇编语言开发环境</h1><h2 id="下载VMware虚拟机"><a href="#下载VMware虚拟机" class="headerlink" title="下载VMware虚拟机"></a>下载VMware虚拟机</h2><ul>
+<li>以管理员身份打开Windows命令行，输入以下内容关闭系统自带的Hyper-V虚拟机服务：<blockquote>
+<p>bcdedit &#x2F;set hypervisorlaunchtype off</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20161908.png"></p>
+<ul>
+<li><p>然后回车，重启电脑。（这里关闭Hyper-V虚拟机服务是因为VMware与Hyper-V不兼容，如果不关闭Hyper-V服务亲测会报错）</p>
+</li>
+<li><p>在官网下载VMware<a target="_blank" rel="noopener" href="https://customerconnect.vmware.com/cn/downloads/#all_products">下载网址</a>。</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20163300.png"></p>
+<ul>
+<li>最好选择16.0版本的，比较稳定。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20163408.png"></p>
+<ul>
+<li><p>下载时需要注册，遇到邮编错误的情况，就填写以下信息：省份：北京，城市：Beijing，地址1：XiDan,地址2：空着，邮编：100103</p>
+</li>
+<li><p>安装过程中全部点击下一部即可。</p>
+</li>
+</ul>
+<h2 id="下载Windows-xp操作系统"><a href="#下载Windows-xp操作系统" class="headerlink" title="下载Windows xp操作系统"></a>下载Windows xp操作系统</h2><ul>
+<li><p>首先下载一个<a target="_blank" rel="noopener" href="https://www.xunlei.com/">迅雷</a>。</p>
+</li>
+<li><p>打开<a target="_blank" rel="noopener" href="https://next.itellyou.cn/">itellyou</a>网站，点击Windows xp,复制第二行的内容</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20174342.png"></p>
+<ul>
+<li>打开迅雷，开始下载：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20174430.png"></p>
+<h2 id="使用VMware虚拟机安装Windows-xp操作系统"><a href="#使用VMware虚拟机安装Windows-xp操作系统" class="headerlink" title="使用VMware虚拟机安装Windows xp操作系统"></a>使用VMware虚拟机安装Windows xp操作系统</h2><ul>
+<li><p>VMware Workstation Pro 16 许可证密钥：ZF3R0-FHED2-M80TY-8QYGC-NPKYF</p>
+</li>
+<li><p>点击“创建新的虚拟机”，选择默认的“经典”模式<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175134.png"> </p>
+</li>
+<li><p>点击“浏览”，选择迅雷下载的xp操作系用镜像，下一步：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175244.png"></p>
+</li>
+<li><p>设置密码：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175436.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175514.png"></p>
+</li>
+<li><p>这个建议保留默认设置，下面的选项看自己磁盘大小，磁盘大就选单个，反之选多个，下一步：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175559.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175709.png"></p>
+</li>
+<li><p>之后耐心等待：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175742.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180032.png"></p>
+</li>
+<li><p>针对密钥问题，可以不填，直接选下一步<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180322.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180400.png"></p>
+</li>
+<li><p>安装完成：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180658.png"></p>
+</li>
+<li><p>vm自动安装tool:<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180939.png"></p>
+</li>
+<li><p>安装成功：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20181127.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20181413.png"></p>
+</li>
+</ul>
+<h2 id="在32位Windows下搭建16位8086汇编语言开发环境"><a href="#在32位Windows下搭建16位8086汇编语言开发环境" class="headerlink" title="在32位Windows下搭建16位8086汇编语言开发环境"></a>在32位Windows下搭建16位8086汇编语言开发环境</h2><p>+ </p>
+<p>参考资料：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sunyisong090630/article/details/126335463?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169545273116800211568872%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169545273116800211568872&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-126335463-null-null.142%5Ev94%5EchatsearchT3_1&utm_term=%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85windows%20xp&spm=1018.2226.3001.4187">CSDN</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2118626">腾讯云</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-esp32使用与环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/07/esp32%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">esp32使用与环境搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2023/09/07/esp32%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2023-09-07T09:02:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="VScode-Platformio配置esp32环境"><a href="#VScode-Platformio配置esp32环境" class="headerlink" title="VScode+Platformio配置esp32环境"></a>VScode+Platformio配置esp32环境</h1><h2 id="安装Platformio插件"><a href="#安装Platformio插件" class="headerlink" title="安装Platformio插件"></a>安装Platformio插件</h2><ul>
+<li><p>打开vscode，右侧插件搜索platformio<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-07%20191353.png"></p>
+</li>
+<li><p>进入PIO Home，选择板子型号为ESP32-DevKitC，相关产品为ESP32-WROOM-32E，ESP32-WROOM-32UE，ESP32-WROOM-DA。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-07%20191503.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-07%20192441.png"></p>
+</li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><ul>
+<li>测试代码</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// put your setup code here, to run once:</span></span><br><span class="line">  pinMode(<span class="number">32</span>, OUTPUT);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="comment">// put your main code here, to run repeatedly:</span></span><br><span class="line">  digitalWrite(<span class="number">32</span>, HIGH);   <span class="comment">// turn the LED on (HIGH is the voltage level)</span></span><br><span class="line">  delay(<span class="number">1000</span>);                       <span class="comment">// wait for a second</span></span><br><span class="line">  digitalWrite(<span class="number">32</span>, LOW);    <span class="comment">// turn the LED off by making the voltage LOW</span></span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参考资料：<a target="_blank" rel="noopener" href="https://blog.csdn.net/solar_Lan/article/details/94548536">https://blog.csdn.net/solar_Lan/article/details/94548536</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/09/07/esp32%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vscode-OpenCV-C-环境配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

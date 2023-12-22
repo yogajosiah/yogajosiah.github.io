@@ -6,15 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023 | Hexo</title>
+  <title>在32位Windows下搭建16位8086汇编语言开发环境 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="[TOC] win11环境下使用虚拟机安装32位windows xp系统搭建16位8086汇编语言开发环境下载VMware虚拟机 以管理员身份打开Windows命令行，输入以下内容关闭系统自带的Hyper-V虚拟机服务： bcdedit &#x2F;set hypervisorlaunchtype off      然后回车，重启电脑。（这里关闭Hyper-V虚拟机服务是因为VMware与Hype">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在32位Windows下搭建16位8086汇编语言开发环境">
+<meta property="og:url" content="http://example.com/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC] win11环境下使用虚拟机安装32位windows xp系统搭建16位8086汇编语言开发环境下载VMware虚拟机 以管理员身份打开Windows命令行，输入以下内容关闭系统自带的Hyper-V虚拟机服务： bcdedit &#x2F;set hypervisorlaunchtype off      然后回车，重启电脑。（这里关闭Hyper-V虚拟机服务是因为VMware与Hype">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20161908.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20163300.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20163408.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20174342.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20174430.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175134.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175244.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175436.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175514.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175559.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175709.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175742.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180032.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180322.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180400.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180658.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180939.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20181127.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20181413.png">
+<meta property="article:published_time" content="2023-09-23T07:23:09.000Z">
+<meta property="article:modified_time" content="2023-09-23T10:14:35.788Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20161908.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,292 +174,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-在32位Windows下搭建16位8086汇编语言开发环境" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="archive-article-date">
-  	<time datetime="2023-11-30T03:50:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">数据库远程连接</a>
+    <h1 class="article-title" itemprop="name">
+      在32位Windows下搭建16位8086汇编语言开发环境
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-11-05T05:54:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">华为鲲鹏通用计算服务器配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/10/28/matlab/" class="archive-article-date">
-  	<time datetime="2023-10-28T09:59:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/10/28/matlab/">matlab</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+        
+        <a href="/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
   	<time datetime="2023-09-23T07:23:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">在32位Windows下搭建16位8086汇编语言开发环境</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="win11环境下使用虚拟机安装32位windows-xp系统搭建16位8086汇编语言开发环境"><a href="#win11环境下使用虚拟机安装32位windows-xp系统搭建16位8086汇编语言开发环境" class="headerlink" title="win11环境下使用虚拟机安装32位windows xp系统搭建16位8086汇编语言开发环境"></a>win11环境下使用虚拟机安装32位windows xp系统搭建16位8086汇编语言开发环境</h1><h2 id="下载VMware虚拟机"><a href="#下载VMware虚拟机" class="headerlink" title="下载VMware虚拟机"></a>下载VMware虚拟机</h2><ul>
+<li>以管理员身份打开Windows命令行，输入以下内容关闭系统自带的Hyper-V虚拟机服务：<blockquote>
+<p>bcdedit &#x2F;set hypervisorlaunchtype off</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20161908.png"></p>
+<ul>
+<li><p>然后回车，重启电脑。（这里关闭Hyper-V虚拟机服务是因为VMware与Hyper-V不兼容，如果不关闭Hyper-V服务亲测会报错）</p>
+</li>
+<li><p>在官网下载VMware<a target="_blank" rel="noopener" href="https://customerconnect.vmware.com/cn/downloads/#all_products">下载网址</a>。</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20163300.png"></p>
+<ul>
+<li>最好选择16.0版本的，比较稳定。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20163408.png"></p>
+<ul>
+<li><p>下载时需要注册，遇到邮编错误的情况，就填写以下信息：省份：北京，城市：Beijing，地址1：XiDan,地址2：空着，邮编：100103</p>
+</li>
+<li><p>安装过程中全部点击下一部即可。</p>
+</li>
+</ul>
+<h2 id="下载Windows-xp操作系统"><a href="#下载Windows-xp操作系统" class="headerlink" title="下载Windows xp操作系统"></a>下载Windows xp操作系统</h2><ul>
+<li><p>首先下载一个<a target="_blank" rel="noopener" href="https://www.xunlei.com/">迅雷</a>。</p>
+</li>
+<li><p>打开<a target="_blank" rel="noopener" href="https://next.itellyou.cn/">itellyou</a>网站，点击Windows xp,复制第二行的内容</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20174342.png"></p>
+<ul>
+<li>打开迅雷，开始下载：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20174430.png"></p>
+<h2 id="使用VMware虚拟机安装Windows-xp操作系统"><a href="#使用VMware虚拟机安装Windows-xp操作系统" class="headerlink" title="使用VMware虚拟机安装Windows xp操作系统"></a>使用VMware虚拟机安装Windows xp操作系统</h2><ul>
+<li><p>VMware Workstation Pro 16 许可证密钥：ZF3R0-FHED2-M80TY-8QYGC-NPKYF</p>
+</li>
+<li><p>点击“创建新的虚拟机”，选择默认的“经典”模式<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175134.png"> </p>
+</li>
+<li><p>点击“浏览”，选择迅雷下载的xp操作系用镜像，下一步：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175244.png"></p>
+</li>
+<li><p>设置密码：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175436.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175514.png"></p>
+</li>
+<li><p>这个建议保留默认设置，下面的选项看自己磁盘大小，磁盘大就选单个，反之选多个，下一步：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175559.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175709.png"></p>
+</li>
+<li><p>之后耐心等待：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20175742.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180032.png"></p>
+</li>
+<li><p>针对密钥问题，可以不填，直接选下一步<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180322.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180400.png"></p>
+</li>
+<li><p>安装完成：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180658.png"></p>
+</li>
+<li><p>vm自动安装tool:<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20180939.png"></p>
+</li>
+<li><p>安装成功：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20181127.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-23%20181413.png"></p>
+</li>
+</ul>
+<h2 id="在32位Windows下搭建16位8086汇编语言开发环境"><a href="#在32位Windows下搭建16位8086汇编语言开发环境" class="headerlink" title="在32位Windows下搭建16位8086汇编语言开发环境"></a>在32位Windows下搭建16位8086汇编语言开发环境</h2><p>+ </p>
+<p>参考资料：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sunyisong090630/article/details/126335463?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169545273116800211568872%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169545273116800211568872&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-126335463-null-null.142%5Ev94%5EchatsearchT3_1&utm_term=%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85windows%20xp&spm=1018.2226.3001.4187">CSDN</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2118626">腾讯云</a></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/07/esp32%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2023-09-07T09:02:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-07</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2023/10/28/matlab/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          matlab
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/09/07/esp32%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">esp32使用与环境搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/07/esp32%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">esp32使用与环境搭建</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:47:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">vscode OpenCV C++环境配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:45:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">vscode C++环境配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:41:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">PicGo+Github 搭建图床</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:34:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/hello-world/" class="archive-article-date">
-  	<time datetime="2023-09-06T09:42:15.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -458,8 +414,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

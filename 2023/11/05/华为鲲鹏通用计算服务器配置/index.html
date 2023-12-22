@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023 | Hexo</title>
+  <title>华为鲲鹏通用计算服务器配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="[TOC] 1.远程登陆相关知识1.1 SSH是安全外壳协议 SSH(Secure Shell)是建立在应用层和传输层基础上的安全协议，专为远程登陆会话和其他网络服务提供安全性的协议。  1.2 Shell基本上是一个命令解释器 Shell是一种用C语言编写的程序，用于接收用的命令，也可以理解为远端的登陆工具。  1.3 Xshell软件 Xshell是一个强大的安全终端模拟软件，支持SSH1,S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="华为鲲鹏通用计算服务器配置">
+<meta property="og:url" content="http://example.com/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC] 1.远程登陆相关知识1.1 SSH是安全外壳协议 SSH(Secure Shell)是建立在应用层和传输层基础上的安全协议，专为远程登陆会话和其他网络服务提供安全性的协议。  1.2 Shell基本上是一个命令解释器 Shell是一种用C语言编写的程序，用于接收用的命令，也可以理解为远端的登陆工具。  1.3 Xshell软件 Xshell是一个强大的安全终端模拟软件，支持SSH1,S">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20144841.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20151051.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20142232.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20143818.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20143929.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-10%20173556.png">
+<meta property="article:published_time" content="2023-11-05T05:54:20.000Z">
+<meta property="article:modified_time" content="2023-11-10T10:29:04.720Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20144841.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,292 +161,250 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-华为鲲鹏通用计算服务器配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="archive-article-date">
-  	<time datetime="2023-11-30T03:50:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">数据库远程连接</a>
+    <h1 class="article-title" itemprop="name">
+      华为鲲鹏通用计算服务器配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+        
+        <a href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
   	<time datetime="2023-11-05T05:54:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">华为鲲鹏通用计算服务器配置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="1-远程登陆相关知识"><a href="#1-远程登陆相关知识" class="headerlink" title="1.远程登陆相关知识"></a>1.远程登陆相关知识</h2><h3 id="1-1-SSH是安全外壳协议"><a href="#1-1-SSH是安全外壳协议" class="headerlink" title="1.1 SSH是安全外壳协议"></a>1.1 SSH是安全外壳协议</h3><ul>
+<li>SSH(Secure Shell)是建立在应用层和传输层基础上的安全协议，专为远程登陆会话和其他网络服务提供安全性的协议。</li>
+</ul>
+<h3 id="1-2-Shell基本上是一个命令解释器"><a href="#1-2-Shell基本上是一个命令解释器" class="headerlink" title="1.2 Shell基本上是一个命令解释器"></a>1.2 Shell基本上是一个命令解释器</h3><ul>
+<li>Shell是一种用C语言编写的程序，用于接收用的命令，也可以理解为远端的登陆工具。</li>
+</ul>
+<h3 id="1-3-Xshell软件"><a href="#1-3-Xshell软件" class="headerlink" title="1.3 Xshell软件"></a>1.3 Xshell软件</h3><ul>
+<li>Xshell是一个强大的安全终端模拟软件，支持SSH1,SSH2。</li>
+</ul>
+<h2 id="2-Shell远程登陆华为云服务器"><a href="#2-Shell远程登陆华为云服务器" class="headerlink" title="2.Shell远程登陆华为云服务器"></a>2.Shell远程登陆华为云服务器</h2><h3 id="2-1-选择远端登陆工具"><a href="#2-1-选择远端登陆工具" class="headerlink" title="2.1 选择远端登陆工具"></a>2.1 选择远端登陆工具</h3><ul>
+<li>选择合适的Shell（远端登陆工具），Xshell或者windows自带的shell,本次远程登陆使用的windows自带的Windows PowerShell。</li>
+</ul>
+<h3 id="2-2-远程登陆"><a href="#2-2-远程登陆" class="headerlink" title="2.2 远程登陆"></a>2.2 远程登陆</h3><ul>
+<li><p>打开PowerShell输入<br><code>&gt; ssh root@a.b.c.d</code><br>（如果出现报错，见3）</p>
+</li>
+<li><p>出现下图内容则连接成功连接成功。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20144841.png">x<code>    </code></p>
+</li>
+</ul>
+<h3 id="2-3-测试汇编代码"><a href="#2-3-测试汇编代码" class="headerlink" title="2.3 测试汇编代码"></a>2.3 测试汇编代码</h3><ul>
+<li>vim的简单命令：<blockquote>
+<p>新建汇编源文件并编辑</p>
+<blockquote>
+<p><code>vim hello.s</code></p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>插入模式(InsertMode)：</p>
+<blockquote>
+<p>按’i’可任意编辑<br>按’a’是从目前光标所在的位置的下一个位置开始输入文字<br>按’o’是插入新的一行，从行首开始输入文字</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>命令行模式：</p>
+<blockquote>
+<p>按’Esc’进入命令行格式<br>  <code>:wq</code> 退出并保存<br>  <code>:q</code>  退出不保存<br>  <code>:%d</code> 删除文件中所有内容</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>新建汇编源文件：<br> <code>vim hello.s</code></p>
+</li>
+<li><p>输入以下代码：</p>
+  <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">.text</span></span><br><span class="line"><span class="symbol">.global</span> tart1</span><br><span class="line"><span class="symbol">tart1:</span></span><br><span class="line">    <span class="keyword">mov</span> x0,<span class="number">#0</span></span><br><span class="line">    <span class="keyword">ldr</span> x1,<span class="symbol">=msg</span></span><br><span class="line">    <span class="keyword">mov</span> x2,len</span><br><span class="line">    <span class="keyword">mov</span> x8,<span class="number">64</span></span><br><span class="line">    <span class="keyword">svc</span> <span class="number">#0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">mov</span> x0,<span class="number">123</span></span><br><span class="line">    <span class="keyword">mov</span> x8,<span class="number">93</span></span><br><span class="line">    <span class="keyword">svc</span> <span class="number">#0</span></span><br><span class="line"><span class="symbol">.data</span></span><br><span class="line"><span class="symbol">msg:</span></span><br><span class="line">    <span class="meta">.ascii</span> <span class="string">&quot;Hello World!\n&quot;</span></span><br><span class="line"><span class="symbol">len</span>=.-msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存文件，运行以下命令将源代码编译为二进制文件：<br><code>as hello.s -o hello.o</code></p>
+</li>
+<li><p>输入以下命令进行来链接:<br><code>ld hello.o -o hello</code></p>
+</li>
+<li><p>输入可执行文件名来执行可执行文件：<br><code>hello</code></p>
+</li>
+<li><p>输出结果如下：<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20151051.png"></p>
+</li>
+</ul>
+<h2 id="3-Windows11无法识别ssh命令"><a href="#3-Windows11无法识别ssh命令" class="headerlink" title="3.Windows11无法识别ssh命令"></a>3.Windows11无法识别ssh命令</h2><ul>
+<li>键入ssh命令无法识别，则安装OpenSSH。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20142232.png"></li>
+</ul>
+<h3 id="3-1-下载OpenSSH"><a href="#3-1-下载OpenSSH" class="headerlink" title="3.1 下载OpenSSH"></a>3.1 下载OpenSSH</h3><ul>
+<li>登陆<a target="_blank" rel="noopener" href="https://www.mls-software.com/opensshd.html">OpenSSH官网</a>选择最新版本下载<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20143818.png"></li>
+<li>安装时都选默认安装</li>
+</ul>
+<h3 id="3-2-检验安装成功"><a href="#3-2-检验安装成功" class="headerlink" title="3.2 检验安装成功"></a>3.2 检验安装成功</h3><ul>
+<li>重新打开Windows PowerShell,输入<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; ssh</span><br><span class="line">&gt; shh -help</span><br></pre></td></tr></table></figure>
+检验是否下载成功。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-05%20143929.png"></li>
+</ul>
+<h2 id="4-SSH免密钥登陆"><a href="#4-SSH免密钥登陆" class="headerlink" title="4.SSH免密钥登陆"></a>4.SSH免密钥登陆</h2><h3 id="4-1-在本地机器生成一堆公私钥对"><a href="#4-1-在本地机器生成一堆公私钥对" class="headerlink" title="4.1 在本地机器生成一堆公私钥对"></a>4.1 在本地机器生成一堆公私钥对</h3><ul>
+<li>进入.ssh文件<br><code>cd .ssh</code></li>
+<li>发起公钥请求<br><code>ssh-keygen</code></li>
+<li>然后一路回车<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-10%20173556.png"></li>
+<li>发现在.ssh&#x2F;目录下会生成两个文件：id_rsa是私钥，id_rsa.pub是公钥。</li>
+</ul>
+<h3 id="4-2-复制密钥"><a href="#4-2-复制密钥" class="headerlink" title="4.2 复制密钥"></a>4.2 复制密钥</h3><ul>
+<li>将.pub文件复制到.ssh目录中的authorized_keys中。<br><code>cat id_rsa.pud&gt;&gt;authorized_keys</code></li>
+</ul>
+<h3 id="4-3-设置sshd-config"><a href="#4-3-设置sshd-config" class="headerlink" title="4.3 设置sshd_config"></a>4.3 设置sshd_config</h3><ul>
+<li><p>编辑sshd_config文件<br><code>vim /etc/ssh/sshd_config</code></p>
+<blockquote>
+<p>RSAAuthentication yes（默认开启）<br>PubkeyAuthentication yes<br>AllowTcpForwarding yes（vscode remote 所需，华为云在最后几行，默认为 no）<br>另外，请留意 root 用户能否通过 SSH 登录：PermitRootLogin yes</p>
+</blockquote>
+</li>
+<li><p>保存更改并退出<br><code>systemctl restart sshd.service</code><br><code>logout</code></p>
+</li>
+<li><p>复制私钥到本地</p>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/10/28/matlab/" class="archive-article-date">
-  	<time datetime="2023-10-28T09:59:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-28</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2023/11/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据库远程连接
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/10/28/matlab/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">matlab</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/10/28/matlab/">matlab</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="archive-article-date">
-  	<time datetime="2023-09-23T07:23:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/23/%E5%9C%A832%E4%BD%8DWindows%E4%B8%8B%E6%90%AD%E5%BB%BA16%E4%BD%8D8086%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">在32位Windows下搭建16位8086汇编语言开发环境</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/07/esp32%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2023-09-07T09:02:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/07/esp32%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">esp32使用与环境搭建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:47:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/vscode-OpenCV-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">vscode OpenCV C++环境配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:45:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/vscode-C-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">vscode C++环境配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:41:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/PicGo-Github-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">PicGo+Github 搭建图床</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2023-09-06T12:34:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/06/hello-world/" class="archive-article-date">
-  	<time datetime="2023-09-06T09:42:15.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -458,8 +427,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
