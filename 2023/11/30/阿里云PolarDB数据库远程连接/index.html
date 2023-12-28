@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023/11 | Hexo</title>
+  <title>阿里云PolarDB数据库远程连接 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2023/11/index.html">
+  <meta name="description" content="[toc] 阿里云PolarDB MySQL申请使用1. 实验目的 熟悉PolarDB for MySQL使用方式，了解阿里云dms实验平台。 了解如何创建PolarDB MySQL版Serverless集群和资源包。 学会如何通过数据管理DMS连接PolarDB MySQL版Serverless集群并使用。  2. 相关概念 PolarDB是阿里巴巴自研的新一代云原生数据库，在计算存储分离架构下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云PolarDB数据库远程连接">
+<meta property="og:url" content="http://example.com/2023/11/30/%E9%98%BF%E9%87%8C%E4%BA%91PolarDB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[toc] 阿里云PolarDB MySQL申请使用1. 实验目的 熟悉PolarDB for MySQL使用方式，了解阿里云dms实验平台。 了解如何创建PolarDB MySQL版Serverless集群和资源包。 学会如何通过数据管理DMS连接PolarDB MySQL版Serverless集群并使用。  2. 相关概念 PolarDB是阿里巴巴自研的新一代云原生数据库，在计算存储分离架构下">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-01%20160435.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-01%20161356.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20223543.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20224331.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20230106.png">
+<meta property="article:published_time" content="2023-11-30T03:50:19.000Z">
+<meta property="article:modified_time" content="2023-12-27T14:03:31.971Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-01%20160435.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,76 +160,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-阿里云PolarDB数据库远程连接" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      阿里云PolarDB数据库远程连接
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/30/%E9%98%BF%E9%87%8C%E4%BA%91PolarDB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="archive-article-date">
+
+        
+        <a href="/2023/11/30/%E9%98%BF%E9%87%8C%E4%BA%91PolarDB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="archive-article-date">
   	<time datetime="2023-11-30T03:50:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/30/%E9%98%BF%E9%87%8C%E4%BA%91PolarDB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">阿里云PolarDB数据库远程连接</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+<h1 id="阿里云PolarDB-MySQL申请使用"><a href="#阿里云PolarDB-MySQL申请使用" class="headerlink" title="阿里云PolarDB MySQL申请使用"></a>阿里云PolarDB MySQL申请使用</h1><h2 id="1-实验目的"><a href="#1-实验目的" class="headerlink" title="1. 实验目的"></a>1. 实验目的</h2><ul>
+<li>熟悉PolarDB for MySQL使用方式，了解阿里云dms实验平台。</li>
+<li>了解如何创建PolarDB MySQL版Serverless集群和资源包。</li>
+<li>学会如何通过数据管理DMS连接PolarDB MySQL版Serverless集群并使用。</li>
+</ul>
+<h2 id="2-相关概念"><a href="#2-相关概念" class="headerlink" title="2. 相关概念"></a>2. 相关概念</h2><ul>
+<li><strong>PolarDB</strong>是阿里巴巴自研的新一代云原生数据库，在计算存储分离架构下，利用了软硬件结合的优势，为用户提供具备极致弹性、高性能、海量存储、安全可靠的数据库服务。100%兼容MySQL和PostgreSQL生态，高度兼容Oracle语法。</li>
+<li><strong>PolarDB MySQL</strong> 是PolarDB的三个引擎之一(就相当于MySQL)。</li>
+<li>“数据管理DMS连接PolarDB MySQL版Serverless集群” 的意思是:使用阿里云的数据管理系统（DMS）来方便地管理一个采用 Serverless 架构的 PolarDB MySQL 版数据库,这样你就能更轻松地监控和操作数据库，而数据库会根据需要自动调整资源。这一切旨在提供更便捷、高效的数据库管理方式。</li>
+</ul>
+<h2 id="3-实验步骤"><a href="#3-实验步骤" class="headerlink" title="3. 实验步骤"></a>3. 实验步骤</h2><h3 id="3-1-购买产品"><a href="#3-1-购买产品" class="headerlink" title="3.1 购买产品"></a>3.1 购买产品</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://free.aliyun.com/?spm=a2c4g.2587923.0.0.556f5ed2W27kMk">阿里云免费试用网站</a> </li>
+<li>左侧 <strong>“产品类别” -&gt; “数据库” -&gt; “关系型数据库”</strong></li>
+<li>在免费试用产品区域的云原生数据库 <strong>PolarDB MySQL版 Serverless 5000PCU 100 GB</strong>卡片上单击<strong>立即试用</strong></li>
+<li>进入用户管理页面，有两个产品，一个是存储包，一个是资源包，点击<strong>管理关联实例</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-01%20160435.png"></li>
+<li>打开集群列表，选择你所购买的地区，有一个处在<strong>运行中</strong>状态的集群<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-01%20161356.png"></li>
+</ul>
+<h3 id="3-2-查看Serverless资源包信息"><a href="#3-2-查看Serverless资源包信息" class="headerlink" title="3.2 查看Serverless资源包信息"></a>3.2 查看Serverless资源包信息</h3><h3 id="3-3-创建数据库账号"><a href="#3-3-创建数据库账号" class="headerlink" title="3.3 创建数据库账号"></a>3.3 创建数据库账号</h3><ul>
+<li>在<strong>集群列表</strong>页面，单击<strong>集群ID</strong>，进入基本信息页面</li>
+<li>单击左侧导航栏<strong>配置与管理&gt;账号管理</strong>，单击左上方<strong>创建账号</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20223543.png"></li>
+</ul>
+<h3 id="3-4-创建数据库"><a href="#3-4-创建数据库" class="headerlink" title="3.4 创建数据库"></a>3.4 创建数据库</h3><ul>
+<li>单击左侧导航栏<strong>配置与管理&gt;数据库管理</strong>，单击<strong>创建数据库</strong><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20224331.png"></li>
+</ul>
+<h3 id="3-5-使用DMS连接集群"><a href="#3-5-使用DMS连接集群" class="headerlink" title="3.5 使用DMS连接集群"></a>3.5 使用DMS连接集群</h3><ul>
+<li>单击左侧导航栏<strong>配置与管理&gt;数据库管理</strong>，单击对应数据库操作列中的<strong>SQL查询</strong>，在弹出的对话框中，输入您创建的数据库账号和数据库密码，单击<strong>登录</strong>，即可进入页面<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-02%20230106.png"></li>
+</ul>
+<h3 id="3-6-在我的数据库myworld-data中创建test-table表"><a href="#3-6-在我的数据库myworld-data中创建test-table表" class="headerlink" title="3.6 在我的数据库myworld_data中创建test_table表"></a>3.6 在我的数据库myworld_data中创建test_table表</h3><ul>
+<li><p><strong>创建表</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test_table (</span><br><span class="line">  id <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  name <span class="type">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  age <span class="type">INT</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>添加值</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test_table (name, age) <span class="keyword">VALUES</span></span><br><span class="line">  (<span class="string">&#x27;John&#x27;</span>, <span class="number">25</span>),</span><br><span class="line">  (<span class="string">&#x27;Mary&#x27;</span>, <span class="number">30</span>),</span><br><span class="line">  (<span class="string">&#x27;Bob&#x27;</span>, <span class="number">35</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查找</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test_table;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-7-用户登录dms"><a href="#3-7-用户登录dms" class="headerlink" title="3.7 用户登录dms"></a>3.7 用户登录dms</h3><ul>
+<li>Web连接PolarDB MySQL服务器:用户每次使用PolarDBMySQL时可直接登陆<a target="_blank" rel="noopener" href="https://dms.aliyun.com/">https://dms.aliyun.com/</a> 网址进行访问登陆编写。</li>
+</ul>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/2587923.htm?spm=5176.28008736.J_7597446870.d10000007243_1.3b193e4d8P8tl7&scm=20140722.M_10000007243.P_121.MO_2230-ID_10000007243-MID_10000007243-CID_0-ST_8726-V_1">快速使用PolarDBMySQL版Severless集群</a></p>
+<h1 id="JAVA远程连接PolarDB-MySQL"><a href="#JAVA远程连接PolarDB-MySQL" class="headerlink" title="JAVA远程连接PolarDB MySQL"></a>JAVA远程连接PolarDB MySQL</h1><h2 id="1-实验目的-1"><a href="#1-实验目的-1" class="headerlink" title="1.实验目的"></a>1.实验目的</h2><ul>
+<li>学会使用Java语言实现对数据库的远程连接操作。</li>
+</ul>
+<h2 id="2-实验步骤"><a href="#2-实验步骤" class="headerlink" title="2.实验步骤"></a>2.实验步骤</h2><h3 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h3>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/11/30/%E9%98%BF%E9%87%8C%E4%BA%91PolarDB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-11-05T05:54:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-05</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2023/12/22/MySQL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MySQL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">华为鲲鹏通用计算服务器配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">华为鲲鹏通用计算服务器配置</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -242,8 +384,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

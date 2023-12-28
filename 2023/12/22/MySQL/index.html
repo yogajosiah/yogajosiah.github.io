@@ -6,15 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023/11 | Hexo</title>
+  <title>MySQL | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2023/11/index.html">
+  <meta name="description" content="[toc] 1. Windows上安装MySQL1.1 下载MySQL 访问MySQL官方网站的下载页面，选择下面288.6M的，点击下载。  新的界面如下，点击不登陆直接下载(No thanks, just start my download)   1.2 安装MySQL 进入选择安装类型页面，选择Custom自定义安装类型。  在安装界面上，您可以选择产品。点击MySQL Servers-&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="http://example.com/2023/12/22/MySQL/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[toc] 1. Windows上安装MySQL1.1 下载MySQL 访问MySQL官方网站的下载页面，选择下面288.6M的，点击下载。  新的界面如下，点击不登陆直接下载(No thanks, just start my download)   1.2 安装MySQL 进入选择安装类型页面，选择Custom自定义安装类型。  在安装界面上，您可以选择产品。点击MySQL Servers-&amp;g">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-22%20201212.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-22%20201354.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182219.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182235.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182416.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182440.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182451.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182518.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182609.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182635.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182646.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182714.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20185351.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20185405.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20190617.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20190445.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20215351.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20215502.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20215603.png">
+<meta property="article:published_time" content="2023-12-22T12:06:25.000Z">
+<meta property="article:modified_time" content="2023-12-27T13:56:42.097Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-22%20201212.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,76 +174,212 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MySQL" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/30/%E9%98%BF%E9%87%8C%E4%BA%91PolarDB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="archive-article-date">
-  	<time datetime="2023-11-30T03:50:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/30/%E9%98%BF%E9%87%8C%E4%BA%91PolarDB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">阿里云PolarDB数据库远程连接</a>
+    <h1 class="article-title" itemprop="name">
+      MySQL
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-11-05T05:54:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-05</time>
+        
+        <a href="/2023/12/22/MySQL/" class="archive-article-date">
+  	<time datetime="2023-12-22T12:06:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/11/05/%E5%8D%8E%E4%B8%BA%E9%B2%B2%E9%B9%8F%E9%80%9A%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">华为鲲鹏通用计算服务器配置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+<h1 id="1-Windows上安装MySQL"><a href="#1-Windows上安装MySQL" class="headerlink" title="1. Windows上安装MySQL"></a>1. Windows上安装MySQL</h1><h2 id="1-1-下载MySQL"><a href="#1-1-下载MySQL" class="headerlink" title="1.1 下载MySQL"></a>1.1 下载MySQL</h2><ul>
+<li><p>访问<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/installer/">MySQL官方网站</a>的下载页面，选择下面288.6M的，点击下载。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-22%20201212.png"></p>
+</li>
+<li><p>新的界面如下，点击不登陆直接下载(No thanks, just start my download)<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-22%20201354.png"></p>
+</li>
+</ul>
+<h2 id="1-2-安装MySQL"><a href="#1-2-安装MySQL" class="headerlink" title="1.2 安装MySQL"></a>1.2 安装MySQL</h2><ul>
+<li><p>进入<strong>选择安装类型</strong>页面，选择<strong>Custom</strong>自定义安装类型。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182219.png"></p>
+</li>
+<li><p>在安装界面上，您可以选择产品。点击<strong>MySQL Servers-&gt;MySQL Server-&gt;MySQL Server 8.0-&gt;MySQL Server 8.0.35 -X64</strong>即可下载64位的版本,点击<strong>next</strong> ，之后点击<strong>Execute</strong>,安装程序会自动下载你选择的产品&#x2F;软件。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182235.png"><br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182416.png"></p>
+</li>
+<li><p>下载成功之后，点击<strong>next</strong>。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182440.png"></p>
+</li>
+<li><p>进入到路由器配置页面，这个保持默认选项，不进行更改，点击<strong>next</strong>。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182451.png"></p>
+</li>
+<li><p>进入身份认证页面，因为我之前并没有下载过navicat，所以根据官方建议，我选择第一个，然后点击<strong>next</strong>。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182518.png"></p>
+</li>
+<li><p>之后进入账户设置页面进行密码设置，用一个比较好记的就可以，然后点击<strong>next</strong>。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182609.png"></p>
+</li>
+<li><p>这里稍微改一下名字，方便之后的数据库应用，我把80删掉了，其他的都不变，点击<strong>next</strong>。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182635.png"></p>
+</li>
+<li><p>这里选择最下面的，“我会在服务器配置后管理权限”。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182646.png"></p>
+</li>
+<li><p>进入应用配置页面，这里直接点击<strong>Execute</strong>。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20182714.png"></p>
+</li>
+<li><p>下载完成之后，直接点击<strong>Finish</strong>。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20185351.png"></p>
+</li>
+<li><p>直接点击<strong>Finish</strong>。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20185405.png"></p>
+</li>
+</ul>
+<h2 id="1-3-配置MySQL的环境变量"><a href="#1-3-配置MySQL的环境变量" class="headerlink" title="1.3 配置MySQL的环境变量"></a>1.3 配置MySQL的环境变量</h2><ul>
+<li><p>点击<strong>此电脑-&gt;属性-&gt;高级系统设置-&gt;环境变量-&gt;Path-&gt;新建</strong>，将这个地址复制进去“C:\Program Files\MySQL\MySQL Server 8.0\bin”<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20190617.png"></p>
+</li>
+<li><p>打开终端，输入以下命令，然后输入密码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -q</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20190445.png"></p>
+</li>
+</ul>
+<p>参考文档：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52559040/article/details/121843945">2023年MySQL8.0简易配置</a></p>
+<h1 id="2-vscode连接mysql"><a href="#2-vscode连接mysql" class="headerlink" title="2. vscode连接mysql"></a>2. vscode连接mysql</h1><h2 id="2-1-安装mysql插件"><a href="#2-1-安装mysql插件" class="headerlink" title="2.1 安装mysql插件"></a>2.1 安装mysql插件</h2><p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20215351.png"></p>
+<h2 id="2-2-连接"><a href="#2-2-连接" class="headerlink" title="2.2 连接"></a>2.2 连接</h2><ul>
+<li>输入密码连接。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20215502.png"></p>
+<ul>
+<li>创建数据库，创建表。<br><img src="https://raw.githubusercontent.com/yogajosiah/Blogmanager/main/imag/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-12-27%20215603.png"></li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/22/MySQL/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2023/12/27/JAVA%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-Eclipse/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JAVA环境搭建-Eclipse
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2023/11/30/%E9%98%BF%E9%87%8C%E4%BA%91PolarDB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里云PolarDB数据库远程连接</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -242,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
